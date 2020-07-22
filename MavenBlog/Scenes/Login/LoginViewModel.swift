@@ -6,8 +6,18 @@
 //  Copyright © 2020 Maven Clinic. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class LoginViewModel {
     
+    
+    
+    // MARK: - Intents
+    
+    func submitCredentials(username: String, password: String, completion: @escaping(Error?) -> Void) {
+        UserManager.shared.logIn(username: username, password: password) { error in
+            completion(error)
+            return
+        }
+    }
 }

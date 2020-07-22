@@ -9,49 +9,83 @@ import UIKit
 
 class BlogPostDetailViewController: UIViewController {
     
-    var post: Post!
     var showsFaveButton: Bool = true
     var isFavorited: Bool = false
+    var blogDetailViewModel = BlogListDetailViewModel()
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var bodyLabel: UILabel!
+    // MARK: - Views
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 32)
+        label.numberOfLines = 2
+        return label
+    }()
+    
+    private let bodyLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private lazy var containerStack: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, bodyLabel])
+        stackView.axis = .vertical
+        stackView.spacing = 25
+        return stackView
+    }()
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Post \(post.id)"
-        isFavorited = isPostFavorited(post)
+        setupViews()
+        isFavorited = isPostFavorited(blogDetailViewModel.post)
         updateUI()
-        
-        URLSession.shared.dataTask(with: URL(string: "https://jsonplaceholder.typicode.com/posts/\(post.id)")!, completionHandler: { [weak self] data, response, error in
-            if error != nil {
-                print(error!)
-                return
-            }
-            
-            do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
-                self?.post = Post(json: json ?? [:])
-                
-                DispatchQueue.main.async {
+        start()
+       
+    }
+    
+    // MARK: - Methods
+    
+    private func start() {
+        blogDetailViewModel.start() { [weak self] error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    
+                    self?.titleLabel.text = error.localizedDescription
+                    return
+                    
+                } else {
                     self?.updateUI()
                 }
-            } catch {
-                print("Error: \(error.localizedDescription)")
-                DispatchQueue.main.async {
-                    self?.titleLabel.text = "Error :("
-                }
             }
-        }).resume()
+        }
     }
     
-    func isPostFavorited(_ post: Post) -> Bool {
-        return UserManager.shared.usersFavoritePosts.map { $0.id }.contains(post.id)
+    private func setupContainerStack() {
+        view.addSubview(containerStack)
+        containerStack.translatesAutoresizingMaskIntoConstraints = false
+        containerStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        containerStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+        containerStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        
     }
     
-    func updateUI() {
-        self.titleLabel.text = post.title
-        self.bodyLabel.text = post.body
+    private func updateViews() {
+        
+    }
+    
+    private func isPostFavorited(_ post: Post) -> Bool {
+        return blogDetailViewModel.isPostFavorited(post)
+    }
+    
+    private func updateUI() {
+        self.titleLabel.text = blogDetailViewModel.post.title
+        self.bodyLabel.text = blogDetailViewModel.post.body
+        
         if showsFaveButton {
             navigationItem.rightBarButtonItem = UIBarButtonItem(
                 title: (isFavorited ? "Unfave" : "Fave"),
@@ -61,20 +95,24 @@ class BlogPostDetailViewController: UIViewController {
         }
         
         // Update Favorites tab bar badges
-        let numFavoritedPosts = UserManager.shared.usersFavoritePosts.count
+        let numFavoritedPosts = UserManager.shared.favoritePosts.count
         tabBarController?.tabBar.items?[1].badgeValue = numFavoritedPosts == 0 ? nil : String(numFavoritedPosts)
     }
     
-    @objc func addToFavorites() {
+    @objc private func addToFavorites() {
         isFavorited = true
-        UserManager.shared.userDidFavoritePost(post)
         updateUI()
     }
     
-    @objc func removeFromFavorites() {
+    @objc private func removeFromFavorites() {
         isFavorited = false
-        UserManager.shared.userDidUnfavoritePost(post)
         updateUI()
+    }
+    
+    private func setupViews() {
+        title = "Post \(blogDetailViewModel.post.id)"
+        setupContainerStack()
+        
     }
     
 }

@@ -7,47 +7,68 @@
 
 import UIKit
 
-class BlogPostListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, LogInViewControllerDelegate {
+class BlogPostListViewController: UIViewController, LogInViewControllerDelegate {
     
-    var posts: [Post] = []
+    private var blogPostViewModel = BlogPostViewModel()
     
-    @IBOutlet weak var tableView: UITableView!
+    // MARK: - Views
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.backgroundColor = .white
+        return tableView
+    }()
+    
+    // MARK: - Lifceycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .done, target: self, action: #selector(logOut))
+        setupNavigationBar()
+        registerNotifications()
+        setupTableView()
+        validateUser()
+    }
+    
+    // MARK: - Methods
+    
+    func logInViewControllerDidLogIn() {
+        navigationItem.title = "Welcome, \(String(describing: UserManager.shared.userName))!"
         
-        NotificationCenter.default.addObserver(self, selector: #selector(favoritedPostsDidChange), name: Notification.Name(rawValue: UserManager.FavoritesChangedNotification), object: nil)
-        
-        if UserManager.shared.currentUser == nil {
-            navigateToLogIn()
+        blogPostViewModel.login() { [weak self] error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    let ac = UIAlertController.createAlert(title: "Error", message: "\(error.localizedDescription)")
+                    DispatchQueue.main.async {
+                        self?.present(ac, animated: true, completion: nil)
+                        return
+                    }
+                }
+                self?.tableView.reloadData()
+            }
         }
     }
     
-    func logInViewControllerDidLogIn() {
-        navigationItem.title = "Welcome, \(UserManager.shared.currentUser!.username)!"
-
-        URLSession.shared.dataTask(with: URL(string: "https://jsonplaceholder.typicode.com/posts")!, completionHandler: { [weak self] data, response, error in
-            if error != nil {
-                print(error!)
-                return
-            }
-            
-            do {
-                let jsonArray = try JSONSerialization.jsonObject(with: data!, options: []) as? [[String : Any]]
-                let posts = (jsonArray ?? []).compactMap({ json -> Post? in
-                  return Post(json: json)
-                })
-                self?.posts = posts
-                
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            } catch {
-                print("Error during JSON serialization: \(error.localizedDescription)")
-            }
-        }).resume()
+    private func setupTableView() {
+        view.addSubview(tableView)
+        tableView.fillSuperview()
+    }
+    
+    private func registerNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(favoritedPostsDidChange), name: Notification.Name(rawValue: UserManager.FavoritesChangedNotification), object: nil)
+    }
+    
+    private func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .done, target: self, action: #selector(logOut))
+    }
+    
+    private func validateUser() {
+        if UserManager.shared.userName == nil {
+            navigateToLogIn()
+        }
     }
     
     @objc func favoritedPostsDidChange() {
@@ -55,46 +76,47 @@ class BlogPostListViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     @objc func logOut() {
-        UserManager.shared.currentUser = nil
-        UserManager.shared.usersFavoritePosts = []
+        blogPostViewModel.logOut()
+        
         tabBarController?.tabBar.items?[1].badgeValue = nil
         NotificationCenter.default.post(name: Notification.Name(rawValue: UserManager.FavoritesChangedNotification),
                                         object: nil)
         navigateToLogIn()
     }
     
-    func navigateToLogIn() {
-        let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController") as! LogInViewController
+    private func navigateToLogIn() {
+        let loginViewController = LogInViewController()
         loginViewController.modalPresentationStyle = .overFullScreen
         loginViewController.delegate = self
         navigationController?.present(loginViewController, animated: true, completion: nil)
     }
     
-    func isPostFavorited(_ post: Post) -> Bool {
-        return UserManager.shared.usersFavoritePosts.map { $0.id }.contains(post.id)
+    private func isPostFavorited(_ post: Post) -> Bool {
+        return blogPostViewModel.isPostFavorited(post)
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+}
+
+extension BlogPostListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return blogPostViewModel.posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        let post = posts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let post = blogPostViewModel.posts[indexPath.row]
         cell.textLabel?.text = post.title
         cell.backgroundColor = isPostFavorited(post) ? .yellow : .white
         return cell
     }
+}
+
+extension BlogPostListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let postDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BlogPostDetailViewController") as! BlogPostDetailViewController
-        let post = posts[indexPath.row]
-        postDetailViewController.post = post
+        let postDetailViewController = BlogPostDetailViewController()
+        let post = blogPostViewModel.posts[indexPath.row]
+        postDetailViewController.blogDetailViewModel.post = post
         navigationController?.pushViewController(postDetailViewController, animated: true)
     }
-    
 }

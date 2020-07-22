@@ -24,6 +24,11 @@
 		7AADDAAD24C8A35700C1E181 /* MavenStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAAC24C8A35700C1E181 /* MavenStrings.swift */; };
 		7AADDAAF24C8AA1100C1E181 /* UIAlert+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAAE24C8AA1100C1E181 /* UIAlert+extension.swift */; };
 		7AADDAB124C8AC7600C1E181 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAB024C8AC7600C1E181 /* UIView+extension.swift */; };
+		7AADDAB324C8AF1600C1E181 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAB224C8AF1600C1E181 /* MainViewController.swift */; };
+		7AADDAB524C8B7DF00C1E181 /* BlogListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAB424C8B7DF00C1E181 /* BlogListViewModel.swift */; };
+		7AADDAB724C8B9EE00C1E181 /* BlogListDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAB624C8B9EE00C1E181 /* BlogListDetailViewModel.swift */; };
+		7AADDAB924C8BA1B00C1E181 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAB824C8BA1B00C1E181 /* FavoritesViewModel.swift */; };
+		7AADDABC24C8C0E000C1E181 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDABB24C8C0E000C1E181 /* Networking.swift */; };
 		DCB20D6E249A8EAC002E197B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +52,11 @@
 		7AADDAAC24C8A35700C1E181 /* MavenStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MavenStrings.swift; sourceTree = "<group>"; };
 		7AADDAAE24C8AA1100C1E181 /* UIAlert+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlert+extension.swift"; sourceTree = "<group>"; };
 		7AADDAB024C8AC7600C1E181 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		7AADDAB224C8AF1600C1E181 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7AADDAB424C8B7DF00C1E181 /* BlogListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListViewModel.swift; sourceTree = "<group>"; };
+		7AADDAB624C8B9EE00C1E181 /* BlogListDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListDetailViewModel.swift; sourceTree = "<group>"; };
+		7AADDAB824C8BA1B00C1E181 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		7AADDABB24C8C0E000C1E181 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +92,7 @@
 			children = (
 				7AADDA9924C8950600C1E181 /* Main */,
 				7AADDAA324C89F1B00C1E181 /* Helpers */,
+				7AADDABA24C8C0D100C1E181 /* Services */,
 				7AADDA9B24C8953100C1E181 /* Model */,
 				7AADDA9C24C8956000C1E181 /* Managers */,
 				7AADDA9A24C8951000C1E181 /* Scenes */,
@@ -98,6 +109,7 @@
 				2F2E42782497EF39005AE16D /* AppDelegate.swift */,
 				2F2E427A2497EF39005AE16D /* SceneDelegate.swift */,
 				2F2E427E2497EF39005AE16D /* Main.storyboard */,
+				7AADDAB224C8AF1600C1E181 /* MainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -143,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				2F2E428C2497EFBA005AE16D /* BlogPostListViewController.swift */,
+				7AADDAB424C8B7DF00C1E181 /* BlogListViewModel.swift */,
 			);
 			path = BlogPost;
 			sourceTree = "<group>";
@@ -151,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				2F2E42902497F4D8005AE16D /* BlogPostDetailViewCotnroller.swift */,
+				7AADDAB624C8B9EE00C1E181 /* BlogListDetailViewModel.swift */,
 			);
 			path = BlogPostDetail;
 			sourceTree = "<group>";
@@ -159,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */,
+				7AADDAB824C8BA1B00C1E181 /* FavoritesViewModel.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -189,6 +204,14 @@
 				7AADDAAC24C8A35700C1E181 /* MavenStrings.swift */,
 			);
 			path = LocalizedStrings;
+			sourceTree = "<group>";
+		};
+		7AADDABA24C8C0D100C1E181 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7AADDABB24C8C0E000C1E181 /* Networking.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +290,13 @@
 				7AADDAA824C89F6A00C1E181 /* UIColor+ThemeColors.swift in Sources */,
 				DCB20D6E249A8EAC002E197B /* FavoritesViewController.swift in Sources */,
 				2F2E428D2497EFBA005AE16D /* BlogPostListViewController.swift in Sources */,
+				7AADDAB724C8B9EE00C1E181 /* BlogListDetailViewModel.swift in Sources */,
 				7AADDAAA24C8A05600C1E181 /* Fonts.swift in Sources */,
 				2F2E42932497FF01005AE16D /* User.swift in Sources */,
+				7AADDAB324C8AF1600C1E181 /* MainViewController.swift in Sources */,
 				7AADDAAD24C8A35700C1E181 /* MavenStrings.swift in Sources */,
+				7AADDAB524C8B7DF00C1E181 /* BlogListViewModel.swift in Sources */,
+				7AADDABC24C8C0E000C1E181 /* Networking.swift in Sources */,
 				2F2E42792497EF39005AE16D /* AppDelegate.swift in Sources */,
 				7AADDAAF24C8AA1100C1E181 /* UIAlert+extension.swift in Sources */,
 				2F2E4297249800FE005AE16D /* LogInViewController.swift in Sources */,
@@ -277,6 +304,7 @@
 				2F2E428F2497F1CA005AE16D /* Post.swift in Sources */,
 				7AADDAA224C8977D00C1E181 /* LoginViewModel.swift in Sources */,
 				2F2E42952497FF26005AE16D /* UserManager.swift in Sources */,
+				7AADDAB924C8BA1B00C1E181 /* FavoritesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

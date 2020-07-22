@@ -13,8 +13,21 @@ class UserManager {
     
     private init() { } // want to make sure clients can't create own
     
-    var currentUser: User?
-    var usersFavoritePosts: [Post] = []
+    private var currentUser: User?
+    
+    var userName: String? {
+        return currentUser?.username
+    }
+    
+    private var usersFavoritePosts: [Post] = [] // data store private provide read access thru favorite posts
+    
+    var favoritePosts: [Post] {
+      return usersFavoritePosts
+    }
+    
+    func resetFavoritePost() {
+        usersFavoritePosts = []
+    }
     
     func logIn(username: String, password: String, completion: @escaping (Error?) -> Void) {
         guard currentUser == nil else {

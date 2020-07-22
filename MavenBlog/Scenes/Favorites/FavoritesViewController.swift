@@ -7,46 +7,84 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FavoritesViewController: UIViewController {
     
-    var posts: [Post] {
-        return UserManager.shared.usersFavoritePosts
+    private var favoritesViewModel = FavoritesViewModel()
+    
+    private var favoriteCount: Int {
+        return favoritesViewModel.posts.count
     }
+    // MARK: - Views
     
-    @IBOutlet weak var tableView: UITableView!
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "FavoritesCell")
+        tableView.backgroundColor = .white
+        return tableView
+    }()
+
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Faves (\(posts.count))"
+        setupViews()
         tableView.reloadData()
+        registerObservers()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(favoritedPostsDidChange), name: Notification.Name(rawValue: UserManager.FavoritesChangedNotification), object: nil)
     }
+    
+    // MARK: - Methods
     
     @objc func favoritedPostsDidChange() {
-        navigationItem.title = "Faves (\(posts.count))"
-        tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.navigationItem.title = "Faves (\(String(describing: self?.favoriteCount)))"
+            self?.tableView.reloadData()
+        }
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    private func setupTableView() {
+        view.addSubview(tableView)
+        tableView.fillSuperview()
     }
+    
+    private func setupNavigationBar() {
+           navigationItem.title = "Faves (\(favoriteCount))"
+           
+       }
+    
+    private func setupViews() {
+        setupNavigationBar()
+        setupTableView()
+    }
+    
+    private func registerObservers() {
+         NotificationCenter.default.addObserver(self, selector: #selector(favoritedPostsDidChange), name: Notification.Name(rawValue: UserManager.FavoritesChangedNotification), object: nil)
+    }
+}
+
+extension FavoritesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return favoritesViewModel.posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = posts[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FavoritesCell", for: indexPath)
+        cell.textLabel?.text = favoritesViewModel.posts[indexPath.row].title
         return cell
     }
     
+}
+
+extension FavoritesViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let postDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BlogPostDetailViewController") as! BlogPostDetailViewController
-        let post = posts[indexPath.row]
-        postDetailViewController.post = post
+        let postDetailViewController = BlogPostDetailViewController()
+        let post = favoritesViewModel.posts[indexPath.row]
+        postDetailViewController.blogDetailViewModel.post = post
         postDetailViewController.showsFaveButton = false
         navigationController?.pushViewController(postDetailViewController, animated: true)
     }
