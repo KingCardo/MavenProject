@@ -18,7 +18,7 @@ class BlogPostListViewController: UIViewController, UITableViewDataSource, UITab
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .done, target: self, action: #selector(logOut))
         
-        NotificationCenter.default.addObserver(self, selector: #selector(favoritedPostsDidChange), name: Notification.Name(rawValue: "MavenBlogFavoritesChanged"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(favoritedPostsDidChange), name: Notification.Name(rawValue: UserManager.FavoritesChangedNotification), object: nil)
         
         if UserManager.shared.currentUser == nil {
             navigateToLogIn()
@@ -58,7 +58,7 @@ class BlogPostListViewController: UIViewController, UITableViewDataSource, UITab
         UserManager.shared.currentUser = nil
         UserManager.shared.usersFavoritePosts = []
         tabBarController?.tabBar.items?[1].badgeValue = nil
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "MavenBlogFavoritesChanged"),
+        NotificationCenter.default.post(name: Notification.Name(rawValue: UserManager.FavoritesChangedNotification),
                                         object: nil)
         navigateToLogIn()
     }

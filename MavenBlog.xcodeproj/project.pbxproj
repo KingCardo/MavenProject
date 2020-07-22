@@ -18,6 +18,12 @@
 		2F2E42932497FF01005AE16D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E42922497FF01005AE16D /* User.swift */; };
 		2F2E42952497FF26005AE16D /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E42942497FF26005AE16D /* UserManager.swift */; };
 		2F2E4297249800FE005AE16D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E4296249800FE005AE16D /* LogInViewController.swift */; };
+		7AADDAA224C8977D00C1E181 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAA124C8977D00C1E181 /* LoginViewModel.swift */; };
+		7AADDAA824C89F6A00C1E181 /* UIColor+ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAA724C89F6A00C1E181 /* UIColor+ThemeColors.swift */; };
+		7AADDAAA24C8A05600C1E181 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAA924C8A05600C1E181 /* Fonts.swift */; };
+		7AADDAAD24C8A35700C1E181 /* MavenStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAAC24C8A35700C1E181 /* MavenStrings.swift */; };
+		7AADDAAF24C8AA1100C1E181 /* UIAlert+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAAE24C8AA1100C1E181 /* UIAlert+extension.swift */; };
+		7AADDAB124C8AC7600C1E181 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAB024C8AC7600C1E181 /* UIView+extension.swift */; };
 		DCB20D6E249A8EAC002E197B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +41,12 @@
 		2F2E42922497FF01005AE16D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2F2E42942497FF26005AE16D /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		2F2E4296249800FE005AE16D /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		7AADDAA124C8977D00C1E181 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		7AADDAA724C89F6A00C1E181 /* UIColor+ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ThemeColors.swift"; sourceTree = "<group>"; };
+		7AADDAA924C8A05600C1E181 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		7AADDAAC24C8A35700C1E181 /* MavenStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MavenStrings.swift; sourceTree = "<group>"; };
+		7AADDAAE24C8AA1100C1E181 /* UIAlert+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlert+extension.swift"; sourceTree = "<group>"; };
+		7AADDAB024C8AC7600C1E181 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,21 +80,115 @@
 		2F2E42772497EF39005AE16D /* MavenBlog */ = {
 			isa = PBXGroup;
 			children = (
-				2F2E42782497EF39005AE16D /* AppDelegate.swift */,
-				2F2E427A2497EF39005AE16D /* SceneDelegate.swift */,
-				2F2E4296249800FE005AE16D /* LogInViewController.swift */,
-				2F2E428C2497EFBA005AE16D /* BlogPostListViewController.swift */,
-				2F2E42902497F4D8005AE16D /* BlogPostDetailViewCotnroller.swift */,
-				DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */,
-				2F2E42942497FF26005AE16D /* UserManager.swift */,
-				2F2E428E2497F1CA005AE16D /* Post.swift */,
-				2F2E42922497FF01005AE16D /* User.swift */,
-				2F2E427E2497EF39005AE16D /* Main.storyboard */,
+				7AADDA9924C8950600C1E181 /* Main */,
+				7AADDAA324C89F1B00C1E181 /* Helpers */,
+				7AADDA9B24C8953100C1E181 /* Model */,
+				7AADDA9C24C8956000C1E181 /* Managers */,
+				7AADDA9A24C8951000C1E181 /* Scenes */,
 				2F2E42812497EF3C005AE16D /* Assets.xcassets */,
 				2F2E42832497EF3C005AE16D /* LaunchScreen.storyboard */,
 				2F2E42862497EF3C005AE16D /* Info.plist */,
 			);
 			path = MavenBlog;
+			sourceTree = "<group>";
+		};
+		7AADDA9924C8950600C1E181 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2F2E42782497EF39005AE16D /* AppDelegate.swift */,
+				2F2E427A2497EF39005AE16D /* SceneDelegate.swift */,
+				2F2E427E2497EF39005AE16D /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7AADDA9A24C8951000C1E181 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7AADDA9D24C8962900C1E181 /* Login */,
+				7AADDA9E24C8964700C1E181 /* BlogPost */,
+				7AADDA9F24C8965200C1E181 /* BlogPostDetail */,
+				7AADDAA024C8966300C1E181 /* Favorites */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7AADDA9B24C8953100C1E181 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F2E428E2497F1CA005AE16D /* Post.swift */,
+				2F2E42922497FF01005AE16D /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7AADDA9C24C8956000C1E181 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2F2E42942497FF26005AE16D /* UserManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		7AADDA9D24C8962900C1E181 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2F2E4296249800FE005AE16D /* LogInViewController.swift */,
+				7AADDAA124C8977D00C1E181 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7AADDA9E24C8964700C1E181 /* BlogPost */ = {
+			isa = PBXGroup;
+			children = (
+				2F2E428C2497EFBA005AE16D /* BlogPostListViewController.swift */,
+			);
+			path = BlogPost;
+			sourceTree = "<group>";
+		};
+		7AADDA9F24C8965200C1E181 /* BlogPostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2F2E42902497F4D8005AE16D /* BlogPostDetailViewCotnroller.swift */,
+			);
+			path = BlogPostDetail;
+			sourceTree = "<group>";
+		};
+		7AADDAA024C8966300C1E181 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		7AADDAA324C89F1B00C1E181 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7AADDAAB24C8A33500C1E181 /* LocalizedStrings */,
+				7AADDAA424C89F2900C1E181 /* Style */,
+				7AADDAAE24C8AA1100C1E181 /* UIAlert+extension.swift */,
+				7AADDAB024C8AC7600C1E181 /* UIView+extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7AADDAA424C89F2900C1E181 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				7AADDAA724C89F6A00C1E181 /* UIColor+ThemeColors.swift */,
+				7AADDAA924C8A05600C1E181 /* Fonts.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		7AADDAAB24C8A33500C1E181 /* LocalizedStrings */ = {
+			isa = PBXGroup;
+			children = (
+				7AADDAAC24C8A35700C1E181 /* MavenStrings.swift */,
+			);
+			path = LocalizedStrings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,14 +262,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AADDAB124C8AC7600C1E181 /* UIView+extension.swift in Sources */,
 				2F2E42912497F4D8005AE16D /* BlogPostDetailViewCotnroller.swift in Sources */,
+				7AADDAA824C89F6A00C1E181 /* UIColor+ThemeColors.swift in Sources */,
 				DCB20D6E249A8EAC002E197B /* FavoritesViewController.swift in Sources */,
 				2F2E428D2497EFBA005AE16D /* BlogPostListViewController.swift in Sources */,
+				7AADDAAA24C8A05600C1E181 /* Fonts.swift in Sources */,
 				2F2E42932497FF01005AE16D /* User.swift in Sources */,
+				7AADDAAD24C8A35700C1E181 /* MavenStrings.swift in Sources */,
 				2F2E42792497EF39005AE16D /* AppDelegate.swift in Sources */,
+				7AADDAAF24C8AA1100C1E181 /* UIAlert+extension.swift in Sources */,
 				2F2E4297249800FE005AE16D /* LogInViewController.swift in Sources */,
 				2F2E427B2497EF39005AE16D /* SceneDelegate.swift in Sources */,
 				2F2E428F2497F1CA005AE16D /* Post.swift in Sources */,
+				7AADDAA224C8977D00C1E181 /* LoginViewModel.swift in Sources */,
 				2F2E42952497FF26005AE16D /* UserManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

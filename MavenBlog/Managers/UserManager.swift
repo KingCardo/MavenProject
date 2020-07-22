@@ -11,6 +11,8 @@ class UserManager {
     
     static var shared = UserManager()
     
+    private init() { } // want to make sure clients can't create own
+    
     var currentUser: User?
     var usersFavoritePosts: [Post] = []
     
@@ -32,20 +34,24 @@ class UserManager {
         }
     }
     
-    func validateCredentials(username: String, password: String) -> Bool {
+    private func validateCredentials(username: String, password: String) -> Bool {
         return username == "user" && password == "pass"
     }
     
     func userDidFavoritePost(_ post: Post) {
         usersFavoritePosts.append(post)
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "MavenBlogFavoritesChanged"),
+        NotificationCenter.default.post(name: Notification.Name(rawValue: UserManager.FavoritesChangedNotification),
                                         object: nil)
     }
     
     func userDidUnfavoritePost(_ post: Post) {
         usersFavoritePosts.removeAll { $0.id == post.id }
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "MavenBlogFavoritesChanged"),
+        NotificationCenter.default.post(name: Notification.Name(rawValue: UserManager.FavoritesChangedNotification),
                                         object: nil)
     }
     
+}
+
+extension UserManager {
+    static let FavoritesChangedNotification = "MavenBlogFavoritesChanged"
 }

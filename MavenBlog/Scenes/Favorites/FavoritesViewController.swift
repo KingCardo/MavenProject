@@ -21,7 +21,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         navigationItem.title = "Faves (\(posts.count))"
         tableView.reloadData()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(favoritedPostsDidChange), name: Notification.Name(rawValue: "MavenBlogFavoritesChanged"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(favoritedPostsDidChange), name: Notification.Name(rawValue: UserManager.FavoritesChangedNotification), object: nil)
     }
     
     @objc func favoritedPostsDidChange() {
