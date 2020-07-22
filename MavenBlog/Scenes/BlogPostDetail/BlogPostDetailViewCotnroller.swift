@@ -17,22 +17,22 @@ class BlogPostDetailViewController: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 32)
-        label.numberOfLines = 2
+        label.font = UIFont.makeTitleFont(size: BlogPostDetailViewController.titleLabelFontSize)
+        label.numberOfLines = BlogPostDetailViewController.titleLabelNumberOfLines
         return label
     }()
     
     private let bodyLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.numberOfLines = 0
+        label.font = UIFont.makeAvenirNext(size: BlogPostDetailViewController.bodyLabelFontSize)
+        label.numberOfLines = BlogPostDetailViewController.bodyLabelNumberOfLines
         return label
     }()
     
     private lazy var containerStack: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [titleLabel, bodyLabel])
         stackView.axis = .vertical
-        stackView.spacing = 25
+        stackView.spacing = BlogPostDetailViewController.containerSpacing
         return stackView
     }()
     
@@ -69,8 +69,8 @@ class BlogPostDetailViewController: UIViewController {
         view.addSubview(containerStack)
         containerStack.translatesAutoresizingMaskIntoConstraints = false
         containerStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        containerStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        containerStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        containerStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: BlogPostDetailViewController.containerDimensions.left).isActive = true
+        containerStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: BlogPostDetailViewController.containerDimensions.right).isActive = true
         
     }
     
@@ -117,5 +117,13 @@ class BlogPostDetailViewController: UIViewController {
         view.backgroundColor = .white
         
     }
-    
+}
+
+extension BlogPostDetailViewController {
+    static let containerSpacing: CGFloat = 25
+    static let containerDimensions = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: -16)
+    static let bodyLabelFontSize: CGFloat = 16
+    static let bodyLabelNumberOfLines = 0
+    static let titleLabelFontSize: CGFloat = 32
+    static let titleLabelNumberOfLines = 2
 }

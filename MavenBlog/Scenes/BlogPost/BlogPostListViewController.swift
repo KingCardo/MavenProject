@@ -11,13 +11,15 @@ class BlogPostListViewController: UIViewController, LogInViewControllerDelegate 
     
     private var blogPostViewModel = BlogPostViewModel(service: Networking())
     
+    private static let bpTableViewCellID = "BlogTableViewCellID"
+    
     // MARK: - Views
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: BlogPostListViewController.bpTableViewCellID)
         tableView.backgroundColor = .white
         return tableView
     }()
@@ -74,12 +76,12 @@ class BlogPostListViewController: UIViewController, LogInViewControllerDelegate 
         }
     }
     
-    @objc func favoritedPostsDidChange() {
+    @objc private func favoritedPostsDidChange() {
         tableView.reloadData()
     }
     
     
-    @objc func logOut() {
+    @objc private func logOut() {
         let ac = UIAlertController.createAlert(title: "Log Out?", message: "Are you sure you want to log out?") { [weak self] _ in
             
             self?.blogPostViewModel.logOut()
@@ -113,7 +115,7 @@ extension BlogPostListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: BlogPostListViewController.bpTableViewCellID, for: indexPath)
         let post = blogPostViewModel.posts[indexPath.row]
         cell.textLabel?.text = post.title
         cell.backgroundColor = isPostFavorited(post) ? .yellow : .white

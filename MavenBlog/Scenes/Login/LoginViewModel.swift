@@ -10,8 +10,6 @@ import Foundation
 
 class LoginViewModel {
     
-    
-    
     // MARK: - Intents
     
     func submitCredentials(username: String, password: String, completion: @escaping(Error?) -> Void) {

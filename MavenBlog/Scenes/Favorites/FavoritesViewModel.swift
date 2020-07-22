@@ -13,6 +13,4 @@ class FavoritesViewModel {
     var posts: [Post] {
            return UserManager.shared.favoritePosts
        }
-    // MARK: - Intents
-    
 }

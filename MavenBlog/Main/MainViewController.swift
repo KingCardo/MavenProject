@@ -13,9 +13,7 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTabBar()
         setup()
-
     }
     
     private var blogListNavigationController: UINavigationController!
@@ -33,9 +31,4 @@ class MainViewController: UITabBarController {
         
         setViewControllers([blogListNavigationController, favoriteNavigationController], animated: true)
     }
-    
-    private func setupTabBar() {
-        
-    }
-
 }

@@ -23,7 +23,7 @@ class LogInViewController: UIViewController {
         let label = UILabel()
         label.text = "Maven Blog"
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 37)//TODO: - refactor
+        label.font = UIFont.makeTitleFont(size: LogInViewController.titleLabelFontSize)//TODO: - refactor
         return label
     }()
     
@@ -31,7 +31,7 @@ class LogInViewController: UIViewController {
         let tf = UITextField()
         tf.minimumFontSize = LogInViewController.minFontSize
         tf.adjustsFontSizeToFitWidth = true
-        tf.font = UIFont.systemFont(ofSize: 14)
+        tf.font = UIFont.systemFont(ofSize: LogInViewController.textFieldFontSize)
         tf.placeholder = "Username"
         tf.borderStyle = .roundedRect
         return tf
@@ -41,7 +41,7 @@ class LogInViewController: UIViewController {
         let tf = UITextField()
         tf.minimumFontSize = LogInViewController.minFontSize
         tf.adjustsFontSizeToFitWidth = true
-        tf.font = UIFont.systemFont(ofSize: 14)
+        tf.font = UIFont.systemFont(ofSize: LogInViewController.textFieldFontSize)
         tf.placeholder = "Password"
         tf.borderStyle = .roundedRect
         tf.isSecureTextEntry = true
@@ -51,7 +51,7 @@ class LogInViewController: UIViewController {
     private var submitButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.textColor = .white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        button.titleLabel?.font = UIFont.makeAvenirNext(size: LogInViewController.submitButtonFontSize)
         button.backgroundColor = UIColor.mavenDarkGreen
         button.setTitle("Submit", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -148,4 +148,7 @@ extension LogInViewController {
     static let mainStackViewSpacing: CGFloat = 75
     static let containerStackViewSpacing: CGFloat = 25
     static let submitButtomTopSpacing: CGFloat = 25
+    static let titleLabelFontSize: CGFloat = 37
+    static let textFieldFontSize: CGFloat = 14
+    static let submitButtonFontSize: CGFloat = 15
 }
