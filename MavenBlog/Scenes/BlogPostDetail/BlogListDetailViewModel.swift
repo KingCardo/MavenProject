@@ -12,10 +12,22 @@ class BlogListDetailViewModel {
     
     var post: Post!
     
+    let service: NetworkingService
+    
+    init(service: NetworkingService) {
+        self.service = service
+    }
+    
     
     // MARK: - Intents
     
     func start(completion: @escaping(Error?) -> Void) {
+//        service.fetchData() { [weak self] post, error in
+//            if error != nil {
+//             completion(error)
+//                return
+//            }
+//        }
         URLSession.shared.dataTask(with: URL(string: "https://jsonplaceholder.typicode.com/posts/\(post.id)")!, completionHandler: { [weak self] data, response, error in
                    if error != nil {
                     completion(error)
@@ -35,7 +47,6 @@ class BlogListDetailViewModel {
     }
     
     func addToFavorites() {
-        
         UserManager.shared.userDidFavoritePost(post)
         
     }

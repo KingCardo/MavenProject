@@ -48,26 +48,21 @@ class LogInViewController: UIViewController {
         return tf
     }()
     
-    private let submitButton: UIButton = {
+    private var submitButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.textColor = .white
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         button.backgroundColor = UIColor.mavenDarkGreen
-        button.addTarget(self, action: #selector(submitButtonTapped(_:)), for: .touchDown)
         button.setTitle("Submit", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.widthAnchor.constraint(equalToConstant: LogInViewController.submitButtonSize.width).isActive = true
         button.heightAnchor.constraint(equalToConstant: LogInViewController.submitButtonSize.height).isActive = true
+        button.addTarget(self, action: #selector(submitButtonTapped(_:)), for: .touchDown)
         return button
     }()
     
-    private lazy var containerSubmitButton: UIView = {
-        let view = UIView()
-        return view
-    }()
-    
     private lazy var containerStack: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [usernameTextField, passwordTextField, containerSubmitButton])
+        let stackView = UIStackView(arrangedSubviews: [usernameTextField, passwordTextField])
         stackView.axis = .vertical
         stackView.spacing = LogInViewController.containerStackViewSpacing
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -92,8 +87,7 @@ class LogInViewController: UIViewController {
     
     // MARK: - Methods
     
-    @objc func submitButtonTapped(_ sender: UIButton) {
-        print("tapped")
+    @objc private func submitButtonTapped(_ sender: UIButton) {
         guard let username = usernameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
             let alert = UIAlertController.createAlert(title: "Error", message: "Please fill out all fields.")
             present(alert, animated: true, completion: nil)
@@ -108,6 +102,7 @@ class LogInViewController: UIViewController {
                     self?.present(alert, animated: true, completion: nil)
                     return
                 }
+                return
             }
             DispatchQueue.main.async {
                 self?.delegate?.logInViewControllerDidLogIn()
@@ -131,9 +126,10 @@ class LogInViewController: UIViewController {
     }
     
     private func setupSubmitButton() {
-        containerSubmitButton.addSubview(submitButton)
+        view.addSubview(submitButton)
         submitButton.translatesAutoresizingMaskIntoConstraints = false
-        submitButton.centerXAnchor.constraint(equalTo: containerSubmitButton.centerXAnchor).isActive = true
+        submitButton.topAnchor.constraint(equalTo: mainStack.bottomAnchor, constant: LogInViewController.submitButtomTopSpacing).isActive = true
+        submitButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     private func setupViews() {
@@ -151,4 +147,5 @@ extension LogInViewController {
     static let submitButtonSize = CGSize(width: 100, height: 44)
     static let mainStackViewSpacing: CGFloat = 75
     static let containerStackViewSpacing: CGFloat = 25
+    static let submitButtomTopSpacing: CGFloat = 25
 }

@@ -1,5 +1,5 @@
 //
-//  Networking.swift
+//  NetworkingService.swift
 //  MavenBlog
 //
 //  Created by Riccardo Washington on 7/22/20.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-class Networking: NetworkingService {
-    
+protocol NetworkingService {
+    //func fetchData(completion: @escaping(Post?, Error?) -> Void)
 }

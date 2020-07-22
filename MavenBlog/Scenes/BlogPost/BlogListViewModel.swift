@@ -12,9 +12,16 @@ class BlogPostViewModel {
     
     var posts: [Post] = []
     
+    let service: NetworkingService
+    
+    init(service: NetworkingService) {
+        self.service = service
+    }
+    
     // MARK: - Intents
     
     func login(completion: @escaping(Error?) -> Void) {
+        //service.fetchData(completion: <#T##(Post?, Error?) -> Void#>)
         URLSession.shared.dataTask(with: URL(string: "https://jsonplaceholder.typicode.com/posts")!, completionHandler: { [weak self] data, response, error in
             if error != nil {
                 completion(error)
@@ -37,7 +44,7 @@ class BlogPostViewModel {
     }
     
     func logOut() {
-        UserManager.shared.currentUser = nil
+        UserManager.shared.logOutUser()
         UserManager.shared.resetFavoritePost()
     }
     

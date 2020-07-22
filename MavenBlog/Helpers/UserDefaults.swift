@@ -1,5 +1,5 @@
 //
-//  Networking.swift
+//  UserDefaults.swift
 //  MavenBlog
 //
 //  Created by Riccardo Washington on 7/22/20.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-class Networking: NetworkingService {
-    
+extension UserDefaults {
+    static let loggedInKey = "LOGGEDIN"
+    static let userNameKey = "USERNAME"
 }

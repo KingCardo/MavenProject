@@ -9,7 +9,7 @@ import UIKit
 
 class BlogPostListViewController: UIViewController, LogInViewControllerDelegate {
     
-    private var blogPostViewModel = BlogPostViewModel()
+    private var blogPostViewModel = BlogPostViewModel(service: Networking())
     
     // MARK: - Views
     
@@ -36,7 +36,8 @@ class BlogPostListViewController: UIViewController, LogInViewControllerDelegate 
     // MARK: - Methods
     
     func logInViewControllerDidLogIn() {
-        navigationItem.title = "Welcome, \(String(describing: UserManager.shared.userName))!"
+        guard let username = UserManager.shared.userName else { return }
+        navigationItem.title = "Welcome, \(String(describing: username))!"
         
         blogPostViewModel.login() { [weak self] error in
             DispatchQueue.main.async {
@@ -66,8 +67,10 @@ class BlogPostListViewController: UIViewController, LogInViewControllerDelegate 
     }
     
     private func validateUser() {
-        if UserManager.shared.userName == nil {
+        if !UserManager.shared.isLoggedIn {
             navigateToLogIn()
+        } else {
+            logInViewControllerDidLogIn()
         }
     }
     
@@ -75,13 +78,20 @@ class BlogPostListViewController: UIViewController, LogInViewControllerDelegate 
         tableView.reloadData()
     }
     
+    
     @objc func logOut() {
-        blogPostViewModel.logOut()
+        let ac = UIAlertController.createAlert(title: "Log Out?", message: "Are you sure you want to log out?") { [weak self] _ in
+            
+            self?.blogPostViewModel.logOut()
+            
+            self?.tabBarController?.tabBar.items?[1].badgeValue = nil
+            NotificationCenter.default.post(name: Notification.Name(rawValue: UserManager.FavoritesChangedNotification),
+                                            object: nil)
+            self?.navigateToLogIn()
+        }
         
-        tabBarController?.tabBar.items?[1].badgeValue = nil
-        NotificationCenter.default.post(name: Notification.Name(rawValue: UserManager.FavoritesChangedNotification),
-                                        object: nil)
-        navigateToLogIn()
+        present(ac, animated: true)
+        
     }
     
     private func navigateToLogIn() {
@@ -114,6 +124,7 @@ extension BlogPostListViewController: UITableViewDataSource {
 extension BlogPostListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let postDetailViewController = BlogPostDetailViewController()
         let post = blogPostViewModel.posts[indexPath.row]
         postDetailViewController.blogDetailViewModel.post = post

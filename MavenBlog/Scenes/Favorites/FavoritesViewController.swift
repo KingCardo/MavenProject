@@ -9,6 +9,8 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
     
+    private static let tableViewCellID = "FavoritesCell"
+    
     private var favoritesViewModel = FavoritesViewModel()
     
     private var favoriteCount: Int {
@@ -20,7 +22,7 @@ class FavoritesViewController: UIViewController {
         let tableView = UITableView()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "FavoritesCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: FavoritesViewController.tableViewCellID)
         tableView.backgroundColor = .white
         return tableView
     }()
@@ -72,7 +74,7 @@ extension FavoritesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavoritesCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesViewController.tableViewCellID, for: indexPath)
         cell.textLabel?.text = favoritesViewModel.posts[indexPath.row].title
         return cell
     }

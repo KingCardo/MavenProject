@@ -11,12 +11,24 @@ class UserManager {
     
     static var shared = UserManager()
     
-    private init() { } // want to make sure clients can't create own
+    private init() { } // want to make sure clients can't create own instance
     
     private var currentUser: User?
     
+    var isLoggedIn: Bool {
+        return UserDefaults.standard.bool(forKey: UserDefaults.loggedInKey)
+    }
+    
     var userName: String? {
+        if let name = UserDefaults.standard.object(forKey: UserDefaults.userNameKey) as? String {
+            return name
+        }
         return currentUser?.username
+    }
+    
+    func logOutUser() {
+        currentUser = nil
+        UserDefaults.standard.set(false, forKey: UserDefaults.loggedInKey)
     }
     
     private var usersFavoritePosts: [Post] = [] // data store private provide read access thru favorite posts
@@ -40,6 +52,7 @@ class UserManager {
         DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: DispatchTime.now() + 2.0) { [weak self] in
             if valid {
                 self?.currentUser = User(username: username)
+                UserDefaults.standard.set(true, forKey: UserDefaults.loggedInKey)
                 completion(nil)
             } else {
                 completion(NSError(domain: "com.mavenclinic", code: 123, userInfo: [NSLocalizedDescriptionKey: "Invalid credentials."]))
@@ -48,7 +61,11 @@ class UserManager {
     }
     
     private func validateCredentials(username: String, password: String) -> Bool {
-        return username == "user" && password == "pass"
+        if username == "user" && password == "pass" {
+            UserDefaults.standard.set("Maven", forKey: UserDefaults.userNameKey)
+            return true
+        }
+        return false
     }
     
     func userDidFavoritePost(_ post: Post) {

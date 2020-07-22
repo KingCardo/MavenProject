@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2F2E42792497EF39005AE16D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E42782497EF39005AE16D /* AppDelegate.swift */; };
 		2F2E427B2497EF39005AE16D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E427A2497EF39005AE16D /* SceneDelegate.swift */; };
-		2F2E42802497EF39005AE16D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F2E427E2497EF39005AE16D /* Main.storyboard */; };
 		2F2E42822497EF3C005AE16D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F2E42812497EF3C005AE16D /* Assets.xcassets */; };
 		2F2E42852497EF3C005AE16D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F2E42832497EF3C005AE16D /* LaunchScreen.storyboard */; };
 		2F2E428D2497EFBA005AE16D /* BlogPostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E428C2497EFBA005AE16D /* BlogPostListViewController.swift */; };
@@ -29,6 +28,8 @@
 		7AADDAB724C8B9EE00C1E181 /* BlogListDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAB624C8B9EE00C1E181 /* BlogListDetailViewModel.swift */; };
 		7AADDAB924C8BA1B00C1E181 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAB824C8BA1B00C1E181 /* FavoritesViewModel.swift */; };
 		7AADDABC24C8C0E000C1E181 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDABB24C8C0E000C1E181 /* Networking.swift */; };
+		7AADDABE24C8F01E00C1E181 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDABD24C8F01E00C1E181 /* UserDefaults.swift */; };
+		7AADDAC024C8F84E00C1E181 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDABF24C8F84E00C1E181 /* NetworkingService.swift */; };
 		DCB20D6E249A8EAC002E197B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +37,6 @@
 		2F2E42752497EF39005AE16D /* MavenBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MavenBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F2E42782497EF39005AE16D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F2E427A2497EF39005AE16D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2F2E427F2497EF39005AE16D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F2E42812497EF3C005AE16D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F2E42842497EF3C005AE16D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F2E42862497EF3C005AE16D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +57,8 @@
 		7AADDAB624C8B9EE00C1E181 /* BlogListDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListDetailViewModel.swift; sourceTree = "<group>"; };
 		7AADDAB824C8BA1B00C1E181 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		7AADDABB24C8C0E000C1E181 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		7AADDABD24C8F01E00C1E181 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		7AADDABF24C8F84E00C1E181 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +110,6 @@
 			children = (
 				2F2E42782497EF39005AE16D /* AppDelegate.swift */,
 				2F2E427A2497EF39005AE16D /* SceneDelegate.swift */,
-				2F2E427E2497EF39005AE16D /* Main.storyboard */,
 				7AADDAB224C8AF1600C1E181 /* MainViewController.swift */,
 			);
 			path = Main;
@@ -185,6 +186,7 @@
 				7AADDAA424C89F2900C1E181 /* Style */,
 				7AADDAAE24C8AA1100C1E181 /* UIAlert+extension.swift */,
 				7AADDAB024C8AC7600C1E181 /* UIView+extension.swift */,
+				7AADDABD24C8F01E00C1E181 /* UserDefaults.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				7AADDABB24C8C0E000C1E181 /* Networking.swift */,
+				7AADDABF24C8F84E00C1E181 /* NetworkingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -274,7 +277,6 @@
 			files = (
 				2F2E42852497EF3C005AE16D /* LaunchScreen.storyboard in Resources */,
 				2F2E42822497EF3C005AE16D /* Assets.xcassets in Resources */,
-				2F2E42802497EF39005AE16D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +292,7 @@
 				7AADDAA824C89F6A00C1E181 /* UIColor+ThemeColors.swift in Sources */,
 				DCB20D6E249A8EAC002E197B /* FavoritesViewController.swift in Sources */,
 				2F2E428D2497EFBA005AE16D /* BlogPostListViewController.swift in Sources */,
+				7AADDABE24C8F01E00C1E181 /* UserDefaults.swift in Sources */,
 				7AADDAB724C8B9EE00C1E181 /* BlogListDetailViewModel.swift in Sources */,
 				7AADDAAA24C8A05600C1E181 /* Fonts.swift in Sources */,
 				2F2E42932497FF01005AE16D /* User.swift in Sources */,
@@ -303,6 +306,7 @@
 				2F2E427B2497EF39005AE16D /* SceneDelegate.swift in Sources */,
 				2F2E428F2497F1CA005AE16D /* Post.swift in Sources */,
 				7AADDAA224C8977D00C1E181 /* LoginViewModel.swift in Sources */,
+				7AADDAC024C8F84E00C1E181 /* NetworkingService.swift in Sources */,
 				2F2E42952497FF26005AE16D /* UserManager.swift in Sources */,
 				7AADDAB924C8BA1B00C1E181 /* FavoritesViewModel.swift in Sources */,
 			);
@@ -311,14 +315,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2F2E427E2497EF39005AE16D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2F2E427F2497EF39005AE16D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2F2E42832497EF3C005AE16D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

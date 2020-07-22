@@ -11,7 +11,7 @@ class BlogPostDetailViewController: UIViewController {
     
     var showsFaveButton: Bool = true
     var isFavorited: Bool = false
-    var blogDetailViewModel = BlogListDetailViewModel()
+    var blogDetailViewModel = BlogListDetailViewModel(service: Networking())
     
     // MARK: - Views
     
@@ -101,17 +101,20 @@ class BlogPostDetailViewController: UIViewController {
     
     @objc private func addToFavorites() {
         isFavorited = true
+        blogDetailViewModel.addToFavorites()
         updateUI()
     }
     
     @objc private func removeFromFavorites() {
         isFavorited = false
+        blogDetailViewModel.removeFromFavorites()
         updateUI()
     }
     
     private func setupViews() {
         title = "Post \(blogDetailViewModel.post.id)"
         setupContainerStack()
+        view.backgroundColor = .white
         
     }
     
