@@ -19,6 +19,7 @@
 //Adding basic unit test for view models to make sure behave as expected
 //adding local persistence to save posts and prevent expensive network calls for the same data
 //adding some extensions to UIKit for easy config of labels and textfields and reduce setup in viewcontrollers
+//adding UIActivityIndicator for login screen so user is aware something is happening in case of bad network
 
 ### Additional thoughts
 

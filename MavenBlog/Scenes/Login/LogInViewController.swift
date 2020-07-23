@@ -59,6 +59,20 @@ class LogInViewController: UIViewController {
         return stackView
     }()
     
+    private lazy var spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+    
+    private func setupSpinner() {
+        view.addSubview(spinner)
+        spinner.anchor(top: submitButton.bottomAnchor, padding: UIEdgeInsets(top: LogInViewController.spinnerSpacingTop, left: 0, bottom: 0, right: 0))
+        spinner.centerInSuperview()
+        spinner.startAnimating()
+    }
+    
+    private func removeSpinner() {
+        spinner.stopAnimating()
+        spinner.removeFromSuperview()
+    }
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -70,9 +84,12 @@ class LogInViewController: UIViewController {
     // MARK: - Methods
     
     @objc private func submitButtonTapped(_ sender: UIButton) {
+        setupSpinner()
+        
         guard let username = usernameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
             let alert = UIAlertController.createAlert(title: "Error", message: "Please fill out all fields.")
             present(alert, animated: true, completion: nil)
+            removeSpinner()
             return
         }
         
@@ -82,12 +99,14 @@ class LogInViewController: UIViewController {
                 DispatchQueue.main.async {
                     let alert = UIAlertController.createAlert(title: "Error", message: "\(error.localizedDescription)")
                     self?.present(alert, animated: true, completion: nil)
+                    self?.removeSpinner()
                     return
                 }
                 return
             }
             DispatchQueue.main.async {
                 self?.delegate?.logInViewControllerDidLogIn()
+                self?.removeSpinner()
                 self?.dismiss(animated: true, completion: nil)
             }
         }
@@ -133,4 +152,5 @@ extension LogInViewController {
     static let titleLabelFontSize: CGFloat = 37
     static let textFieldFontSize: CGFloat = 14
     static let submitButtonFontSize: CGFloat = 15
+    static let spinnerSpacingTop: CGFloat = 12
 }
