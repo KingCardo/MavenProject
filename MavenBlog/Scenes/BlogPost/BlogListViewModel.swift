@@ -12,8 +12,7 @@ class BlogPostViewModel {
     
     var posts: [Post] = [] {
         didSet {
-            PostManager.shared.posts = posts
-            PostManager.shared.save()
+            PostManager.shared.save(posts: posts)
         }
     }
     

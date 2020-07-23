@@ -18,14 +18,6 @@ class PostManager {
     
     private init() { }
     
-    var posts: [Post] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                 NotificationCenter.default.post(name: PostManager.postNotification, object: self)
-            }
-        }
-    }
-    
     func load() -> [Post]? {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let archiveURL = documentsDirectory.appendingPathComponent(KpostsFile).appendingPathExtension(format)
@@ -34,7 +26,7 @@ class PostManager {
         guard let decodedData = try? Data(contentsOf: archiveURL) else { return nil }
         
         do {
-            self.posts = try jsonDecoder.decode([Post].self, from: decodedData)
+            let posts = try jsonDecoder.decode([Post].self, from: decodedData)
             return posts
         } catch let error {
             print(error)
@@ -42,7 +34,7 @@ class PostManager {
         return nil
     }
     
-    func save() {
+    func save(posts: [Post]) {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
               let archiveURL = documentsDirectory.appendingPathComponent(KpostsFile).appendingPathExtension(format)
               

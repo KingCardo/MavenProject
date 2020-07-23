@@ -18,17 +18,19 @@ struct Post: Codable {
         self.title = (json[Post.kTitle] as? String) ?? ""
         self.body = json[Post.kBody] as? String
     }
-    
-    init() {
-        self.id = 1
-        self.title = "Test"
-        self.body = "Body"
-    }
-    
 }
 
 extension Post {
     static let kID = "id"
     static let kTitle = "title"
     static let kBody = "body"
+}
+
+extension Post {
+    //just for testing
+    init() {
+        self.id = 1
+        self.title = "Test"
+        self.body = "Body"
+    }
 }

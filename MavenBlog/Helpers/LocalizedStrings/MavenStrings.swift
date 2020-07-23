@@ -7,3 +7,5 @@
 //
 
 import Foundation
+
+//Localized Strings would go here to be used through out

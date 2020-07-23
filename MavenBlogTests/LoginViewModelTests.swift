@@ -22,9 +22,12 @@ class LoginViewModelTests: XCTestCase {
        sut = nil
     }
     
-    func testSubmitCredentials() {
+    func testSubmitCredentialsCompletionCalled() {
+        var called = false
+        
         sut.submitCredentials(username: "user", password: "pass") { (error) in
-            
+            called = true
+            XCTAssertTrue(called, "Completion wasn't called")
         }
     }
 

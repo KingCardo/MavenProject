@@ -13,7 +13,7 @@ class UserManager {
     
     private init() { } // want to make sure clients can't create own instance
     
-    private var currentUser: User?
+    private(set) var currentUser: User?
     
     var isLoggedIn: Bool {
         return UserDefaults.standard.bool(forKey: UserDefaults.loggedInKey)

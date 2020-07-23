@@ -33,8 +33,8 @@
 		7AADDAD024C9FF5200C1E181 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDACF24C9FF5200C1E181 /* LoginViewModelTests.swift */; };
 		7AADDAD224C9FFFA00C1E181 /* BlogListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAD124C9FFFA00C1E181 /* BlogListViewModelTests.swift */; };
 		7AADDAD424CA000D00C1E181 /* BlogDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAD324CA000D00C1E181 /* BlogDetailViewModelTests.swift */; };
-		7AADDAD624CA001B00C1E181 /* FavoritesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAD524CA001B00C1E181 /* FavoritesViewModelTests.swift */; };
 		7AADDAD824CA04E300C1E181 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAD724CA04E300C1E181 /* PostManager.swift */; };
+		7AADDADA24CA0AED00C1E181 /* UserManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAD924CA0AED00C1E181 /* UserManagerTests.swift */; };
 		DCB20D6E249A8EAC002E197B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,8 +79,8 @@
 		7AADDACF24C9FF5200C1E181 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		7AADDAD124C9FFFA00C1E181 /* BlogListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListViewModelTests.swift; sourceTree = "<group>"; };
 		7AADDAD324CA000D00C1E181 /* BlogDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDetailViewModelTests.swift; sourceTree = "<group>"; };
-		7AADDAD524CA001B00C1E181 /* FavoritesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelTests.swift; sourceTree = "<group>"; };
 		7AADDAD724CA04E300C1E181 /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
+		7AADDAD924CA0AED00C1E181 /* UserManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerTests.swift; sourceTree = "<group>"; };
 		DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,10 +252,10 @@
 		7AADDAC624C9FF3400C1E181 /* MavenBlogTests */ = {
 			isa = PBXGroup;
 			children = (
+				7AADDAD924CA0AED00C1E181 /* UserManagerTests.swift */,
 				7AADDACF24C9FF5200C1E181 /* LoginViewModelTests.swift */,
 				7AADDAD124C9FFFA00C1E181 /* BlogListViewModelTests.swift */,
 				7AADDAD324CA000D00C1E181 /* BlogDetailViewModelTests.swift */,
-				7AADDAD524CA001B00C1E181 /* FavoritesViewModelTests.swift */,
 				7AADDAC924C9FF3400C1E181 /* Info.plist */,
 			);
 			path = MavenBlogTests;
@@ -392,8 +392,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AADDAD224C9FFFA00C1E181 /* BlogListViewModelTests.swift in Sources */,
+				7AADDADA24CA0AED00C1E181 /* UserManagerTests.swift in Sources */,
 				7AADDAD024C9FF5200C1E181 /* LoginViewModelTests.swift in Sources */,
-				7AADDAD624CA001B00C1E181 /* FavoritesViewModelTests.swift in Sources */,
 				7AADDAD424CA000D00C1E181 /* BlogDetailViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

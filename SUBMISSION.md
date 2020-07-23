@@ -10,7 +10,7 @@
 ### Which aspects of the codebase did you choose to work on and why?
 
 // First thing I did was review codebase to make sure I understood everything
-//Then started refactoring code base to be programmatic instead of storyboards
+//Then started refactoring code base to be programmatic instead of storyboards natively with UIKit
 //Got rid of magic numbers and string and placed in extension for readability and maintainability
 //Then focused on refactoring each scene to use MVVM
 
@@ -21,4 +21,5 @@
 
 ### Additional thoughts
 
-// YOUR RESPONSE HERE
+//This was fun! Enjoyed every second!
+

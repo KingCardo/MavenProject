@@ -12,16 +12,44 @@ import XCTest
 class BlogDetailViewModelTests: XCTestCase {
     
     var sut: BlogListDetailViewModel!
-    var post: Post!
+    
 
     override func setUpWithError() throws {
         sut = BlogListDetailViewModel(service: Networking())
-        post = Post()
+        sut.post = Post()
     }
 
     override func tearDownWithError() throws {
+        sut.post = nil
         sut = nil
-        post = nil
+    }
+    
+    func testStartCompletioncalled() {
+        
+        var wasCalled = false
+        let expectation = XCTestExpectation(description: "Completion was called")
+        
+        sut.start() { error in
+            wasCalled = true
+            expectation.fulfill()
+            
+        }
+        
+        wait(for: [expectation], timeout: 6.0)
+        XCTAssertTrue(wasCalled)
+    }
+    
+    func testAddToFavorites() {
+        sut.addToFavorites()
+        let isPostFavorited = sut.isPostFavorited(sut.post!)
+        XCTAssertTrue(isPostFavorited, "Post was NOT Favorited")
+        
+    }
+    
+    func testRemoveFromFavorites() {
+        sut.removeFromFavorites()
+        let isPostFavorited = sut.isPostFavorited(sut.post!)
+        XCTAssertFalse(isPostFavorited, "Post was NOT removed from faves")
     }
 
 }
