@@ -9,37 +9,92 @@
 /* Begin PBXBuildFile section */
 		2F2E42792497EF39005AE16D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E42782497EF39005AE16D /* AppDelegate.swift */; };
 		2F2E427B2497EF39005AE16D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E427A2497EF39005AE16D /* SceneDelegate.swift */; };
-		2F2E42802497EF39005AE16D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F2E427E2497EF39005AE16D /* Main.storyboard */; };
 		2F2E42822497EF3C005AE16D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F2E42812497EF3C005AE16D /* Assets.xcassets */; };
 		2F2E42852497EF3C005AE16D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F2E42832497EF3C005AE16D /* LaunchScreen.storyboard */; };
 		2F2E428D2497EFBA005AE16D /* BlogPostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E428C2497EFBA005AE16D /* BlogPostListViewController.swift */; };
 		2F2E428F2497F1CA005AE16D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E428E2497F1CA005AE16D /* Post.swift */; };
-		2F2E42912497F4D8005AE16D /* BlogPostDetailViewCotnroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E42902497F4D8005AE16D /* BlogPostDetailViewCotnroller.swift */; };
+		2F2E42912497F4D8005AE16D /* BlogPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E42902497F4D8005AE16D /* BlogPostDetailViewController.swift */; };
 		2F2E42932497FF01005AE16D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E42922497FF01005AE16D /* User.swift */; };
 		2F2E42952497FF26005AE16D /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E42942497FF26005AE16D /* UserManager.swift */; };
 		2F2E4297249800FE005AE16D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E4296249800FE005AE16D /* LogInViewController.swift */; };
+		7AADDAA224C8977D00C1E181 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAA124C8977D00C1E181 /* LoginViewModel.swift */; };
+		7AADDAA824C89F6A00C1E181 /* UIColor+ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAA724C89F6A00C1E181 /* UIColor+ThemeColors.swift */; };
+		7AADDAAA24C8A05600C1E181 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAA924C8A05600C1E181 /* Fonts.swift */; };
+		7AADDAAD24C8A35700C1E181 /* MavenStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAAC24C8A35700C1E181 /* MavenStrings.swift */; };
+		7AADDAAF24C8AA1100C1E181 /* UIAlert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAAE24C8AA1100C1E181 /* UIAlert+Extension.swift */; };
+		7AADDAB124C8AC7600C1E181 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAB024C8AC7600C1E181 /* UIView+Extension.swift */; };
+		7AADDAB324C8AF1600C1E181 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAB224C8AF1600C1E181 /* MainViewController.swift */; };
+		7AADDAB524C8B7DF00C1E181 /* BlogListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAB424C8B7DF00C1E181 /* BlogListViewModel.swift */; };
+		7AADDAB724C8B9EE00C1E181 /* BlogListDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAB624C8B9EE00C1E181 /* BlogListDetailViewModel.swift */; };
+		7AADDAB924C8BA1B00C1E181 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAB824C8BA1B00C1E181 /* FavoritesViewModel.swift */; };
+		7AADDABC24C8C0E000C1E181 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDABB24C8C0E000C1E181 /* Networking.swift */; };
+		7AADDABE24C8F01E00C1E181 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDABD24C8F01E00C1E181 /* UserDefaults.swift */; };
+		7AADDAC024C8F84E00C1E181 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDABF24C8F84E00C1E181 /* NetworkingService.swift */; };
+		7AADDAD024C9FF5200C1E181 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDACF24C9FF5200C1E181 /* LoginViewModelTests.swift */; };
+		7AADDAD224C9FFFA00C1E181 /* BlogListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAD124C9FFFA00C1E181 /* BlogListViewModelTests.swift */; };
+		7AADDAD424CA000D00C1E181 /* BlogDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAD324CA000D00C1E181 /* BlogDetailViewModelTests.swift */; };
+		7AADDAD824CA04E300C1E181 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAD724CA04E300C1E181 /* PostManager.swift */; };
+		7AADDADA24CA0AED00C1E181 /* UserManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAD924CA0AED00C1E181 /* UserManagerTests.swift */; };
+		7AADDADC24CA3E3500C1E181 /* UIKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDADB24CA3E3500C1E181 /* UIKit+Extension.swift */; };
 		DCB20D6E249A8EAC002E197B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7AADDACA24C9FF3400C1E181 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F2E426D2497EF39005AE16D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F2E42742497EF39005AE16D;
+			remoteInfo = MavenBlog;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2F2E42752497EF39005AE16D /* MavenBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MavenBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F2E42782497EF39005AE16D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F2E427A2497EF39005AE16D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2F2E427F2497EF39005AE16D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F2E42812497EF3C005AE16D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F2E42842497EF3C005AE16D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F2E42862497EF3C005AE16D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F2E428C2497EFBA005AE16D /* BlogPostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPostListViewController.swift; sourceTree = "<group>"; };
 		2F2E428E2497F1CA005AE16D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		2F2E42902497F4D8005AE16D /* BlogPostDetailViewCotnroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPostDetailViewCotnroller.swift; sourceTree = "<group>"; };
+		2F2E42902497F4D8005AE16D /* BlogPostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPostDetailViewController.swift; sourceTree = "<group>"; };
 		2F2E42922497FF01005AE16D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2F2E42942497FF26005AE16D /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		2F2E4296249800FE005AE16D /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		7AADDAA124C8977D00C1E181 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		7AADDAA724C89F6A00C1E181 /* UIColor+ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ThemeColors.swift"; sourceTree = "<group>"; };
+		7AADDAA924C8A05600C1E181 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		7AADDAAC24C8A35700C1E181 /* MavenStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MavenStrings.swift; sourceTree = "<group>"; };
+		7AADDAAE24C8AA1100C1E181 /* UIAlert+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlert+Extension.swift"; sourceTree = "<group>"; };
+		7AADDAB024C8AC7600C1E181 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		7AADDAB224C8AF1600C1E181 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7AADDAB424C8B7DF00C1E181 /* BlogListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListViewModel.swift; sourceTree = "<group>"; };
+		7AADDAB624C8B9EE00C1E181 /* BlogListDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListDetailViewModel.swift; sourceTree = "<group>"; };
+		7AADDAB824C8BA1B00C1E181 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		7AADDABB24C8C0E000C1E181 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		7AADDABD24C8F01E00C1E181 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		7AADDABF24C8F84E00C1E181 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		7AADDAC524C9FF3400C1E181 /* MavenBlogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MavenBlogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AADDAC924C9FF3400C1E181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AADDACF24C9FF5200C1E181 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		7AADDAD124C9FFFA00C1E181 /* BlogListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListViewModelTests.swift; sourceTree = "<group>"; };
+		7AADDAD324CA000D00C1E181 /* BlogDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDetailViewModelTests.swift; sourceTree = "<group>"; };
+		7AADDAD724CA04E300C1E181 /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
+		7AADDAD924CA0AED00C1E181 /* UserManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerTests.swift; sourceTree = "<group>"; };
+		7AADDADB24CA3E3500C1E181 /* UIKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extension.swift"; sourceTree = "<group>"; };
 		DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2F2E42722497EF39005AE16D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AADDAC224C9FF3400C1E181 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -53,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				2F2E42772497EF39005AE16D /* MavenBlog */,
+				7AADDAC624C9FF3400C1E181 /* MavenBlogTests */,
 				2F2E42762497EF39005AE16D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				2F2E42752497EF39005AE16D /* MavenBlog.app */,
+				7AADDAC524C9FF3400C1E181 /* MavenBlogTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,21 +125,143 @@
 		2F2E42772497EF39005AE16D /* MavenBlog */ = {
 			isa = PBXGroup;
 			children = (
-				2F2E42782497EF39005AE16D /* AppDelegate.swift */,
-				2F2E427A2497EF39005AE16D /* SceneDelegate.swift */,
-				2F2E4296249800FE005AE16D /* LogInViewController.swift */,
-				2F2E428C2497EFBA005AE16D /* BlogPostListViewController.swift */,
-				2F2E42902497F4D8005AE16D /* BlogPostDetailViewCotnroller.swift */,
-				DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */,
-				2F2E42942497FF26005AE16D /* UserManager.swift */,
-				2F2E428E2497F1CA005AE16D /* Post.swift */,
-				2F2E42922497FF01005AE16D /* User.swift */,
-				2F2E427E2497EF39005AE16D /* Main.storyboard */,
+				7AADDA9924C8950600C1E181 /* Main */,
+				7AADDAA324C89F1B00C1E181 /* Helpers */,
+				7AADDABA24C8C0D100C1E181 /* Services */,
+				7AADDA9B24C8953100C1E181 /* Model */,
+				7AADDA9C24C8956000C1E181 /* Managers */,
+				7AADDA9A24C8951000C1E181 /* Scenes */,
 				2F2E42812497EF3C005AE16D /* Assets.xcassets */,
 				2F2E42832497EF3C005AE16D /* LaunchScreen.storyboard */,
 				2F2E42862497EF3C005AE16D /* Info.plist */,
 			);
 			path = MavenBlog;
+			sourceTree = "<group>";
+		};
+		7AADDA9924C8950600C1E181 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2F2E42782497EF39005AE16D /* AppDelegate.swift */,
+				2F2E427A2497EF39005AE16D /* SceneDelegate.swift */,
+				7AADDAB224C8AF1600C1E181 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7AADDA9A24C8951000C1E181 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7AADDA9D24C8962900C1E181 /* Login */,
+				7AADDA9E24C8964700C1E181 /* BlogPost */,
+				7AADDA9F24C8965200C1E181 /* BlogPostDetail */,
+				7AADDAA024C8966300C1E181 /* Favorites */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7AADDA9B24C8953100C1E181 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F2E428E2497F1CA005AE16D /* Post.swift */,
+				2F2E42922497FF01005AE16D /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7AADDA9C24C8956000C1E181 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2F2E42942497FF26005AE16D /* UserManager.swift */,
+				7AADDAD724CA04E300C1E181 /* PostManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		7AADDA9D24C8962900C1E181 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2F2E4296249800FE005AE16D /* LogInViewController.swift */,
+				7AADDAA124C8977D00C1E181 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7AADDA9E24C8964700C1E181 /* BlogPost */ = {
+			isa = PBXGroup;
+			children = (
+				2F2E428C2497EFBA005AE16D /* BlogPostListViewController.swift */,
+				7AADDAB424C8B7DF00C1E181 /* BlogListViewModel.swift */,
+			);
+			path = BlogPost;
+			sourceTree = "<group>";
+		};
+		7AADDA9F24C8965200C1E181 /* BlogPostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2F2E42902497F4D8005AE16D /* BlogPostDetailViewController.swift */,
+				7AADDAB624C8B9EE00C1E181 /* BlogListDetailViewModel.swift */,
+			);
+			path = BlogPostDetail;
+			sourceTree = "<group>";
+		};
+		7AADDAA024C8966300C1E181 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */,
+				7AADDAB824C8BA1B00C1E181 /* FavoritesViewModel.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		7AADDAA324C89F1B00C1E181 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7AADDAAB24C8A33500C1E181 /* LocalizedStrings */,
+				7AADDAA424C89F2900C1E181 /* Style */,
+				7AADDAAE24C8AA1100C1E181 /* UIAlert+Extension.swift */,
+				7AADDAB024C8AC7600C1E181 /* UIView+Extension.swift */,
+				7AADDABD24C8F01E00C1E181 /* UserDefaults.swift */,
+				7AADDADB24CA3E3500C1E181 /* UIKit+Extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7AADDAA424C89F2900C1E181 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				7AADDAA724C89F6A00C1E181 /* UIColor+ThemeColors.swift */,
+				7AADDAA924C8A05600C1E181 /* Fonts.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		7AADDAAB24C8A33500C1E181 /* LocalizedStrings */ = {
+			isa = PBXGroup;
+			children = (
+				7AADDAAC24C8A35700C1E181 /* MavenStrings.swift */,
+			);
+			path = LocalizedStrings;
+			sourceTree = "<group>";
+		};
+		7AADDABA24C8C0D100C1E181 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7AADDABB24C8C0E000C1E181 /* Networking.swift */,
+				7AADDABF24C8F84E00C1E181 /* NetworkingService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7AADDAC624C9FF3400C1E181 /* MavenBlogTests */ = {
+			isa = PBXGroup;
+			children = (
+				7AADDAD924CA0AED00C1E181 /* UserManagerTests.swift */,
+				7AADDACF24C9FF5200C1E181 /* LoginViewModelTests.swift */,
+				7AADDAD124C9FFFA00C1E181 /* BlogListViewModelTests.swift */,
+				7AADDAD324CA000D00C1E181 /* BlogDetailViewModelTests.swift */,
+				7AADDAC924C9FF3400C1E181 /* Info.plist */,
+			);
+			path = MavenBlogTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,18 +284,40 @@
 			productReference = 2F2E42752497EF39005AE16D /* MavenBlog.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7AADDAC424C9FF3400C1E181 /* MavenBlogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AADDACC24C9FF3400C1E181 /* Build configuration list for PBXNativeTarget "MavenBlogTests" */;
+			buildPhases = (
+				7AADDAC124C9FF3400C1E181 /* Sources */,
+				7AADDAC224C9FF3400C1E181 /* Frameworks */,
+				7AADDAC324C9FF3400C1E181 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7AADDACB24C9FF3400C1E181 /* PBXTargetDependency */,
+			);
+			name = MavenBlogTests;
+			productName = MavenBlogTests;
+			productReference = 7AADDAC524C9FF3400C1E181 /* MavenBlogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2F2E426D2497EF39005AE16D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
+				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Maven Clinic";
 				TargetAttributes = {
 					2F2E42742497EF39005AE16D = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					7AADDAC424C9FF3400C1E181 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 2F2E42742497EF39005AE16D;
 					};
 				};
 			};
@@ -134,6 +335,7 @@
 			projectRoot = "";
 			targets = (
 				2F2E42742497EF39005AE16D /* MavenBlog */,
+				7AADDAC424C9FF3400C1E181 /* MavenBlogTests */,
 			);
 		};
 /* End PBXProject section */
@@ -145,7 +347,13 @@
 			files = (
 				2F2E42852497EF3C005AE16D /* LaunchScreen.storyboard in Resources */,
 				2F2E42822497EF3C005AE16D /* Assets.xcassets in Resources */,
-				2F2E42802497EF39005AE16D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AADDAC324C9FF3400C1E181 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,29 +364,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F2E42912497F4D8005AE16D /* BlogPostDetailViewCotnroller.swift in Sources */,
+				7AADDAB124C8AC7600C1E181 /* UIView+Extension.swift in Sources */,
+				2F2E42912497F4D8005AE16D /* BlogPostDetailViewController.swift in Sources */,
+				7AADDAA824C89F6A00C1E181 /* UIColor+ThemeColors.swift in Sources */,
 				DCB20D6E249A8EAC002E197B /* FavoritesViewController.swift in Sources */,
 				2F2E428D2497EFBA005AE16D /* BlogPostListViewController.swift in Sources */,
+				7AADDABE24C8F01E00C1E181 /* UserDefaults.swift in Sources */,
+				7AADDAB724C8B9EE00C1E181 /* BlogListDetailViewModel.swift in Sources */,
+				7AADDAAA24C8A05600C1E181 /* Fonts.swift in Sources */,
+				7AADDAD824CA04E300C1E181 /* PostManager.swift in Sources */,
 				2F2E42932497FF01005AE16D /* User.swift in Sources */,
+				7AADDAB324C8AF1600C1E181 /* MainViewController.swift in Sources */,
+				7AADDAAD24C8A35700C1E181 /* MavenStrings.swift in Sources */,
+				7AADDAB524C8B7DF00C1E181 /* BlogListViewModel.swift in Sources */,
+				7AADDABC24C8C0E000C1E181 /* Networking.swift in Sources */,
 				2F2E42792497EF39005AE16D /* AppDelegate.swift in Sources */,
+				7AADDAAF24C8AA1100C1E181 /* UIAlert+Extension.swift in Sources */,
 				2F2E4297249800FE005AE16D /* LogInViewController.swift in Sources */,
 				2F2E427B2497EF39005AE16D /* SceneDelegate.swift in Sources */,
 				2F2E428F2497F1CA005AE16D /* Post.swift in Sources */,
+				7AADDAA224C8977D00C1E181 /* LoginViewModel.swift in Sources */,
+				7AADDAC024C8F84E00C1E181 /* NetworkingService.swift in Sources */,
 				2F2E42952497FF26005AE16D /* UserManager.swift in Sources */,
+				7AADDADC24CA3E3500C1E181 /* UIKit+Extension.swift in Sources */,
+				7AADDAB924C8BA1B00C1E181 /* FavoritesViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AADDAC124C9FF3400C1E181 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AADDAD224C9FFFA00C1E181 /* BlogListViewModelTests.swift in Sources */,
+				7AADDADA24CA0AED00C1E181 /* UserManagerTests.swift in Sources */,
+				7AADDAD024C9FF5200C1E181 /* LoginViewModelTests.swift in Sources */,
+				7AADDAD424CA000D00C1E181 /* BlogDetailViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		2F2E427E2497EF39005AE16D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2F2E427F2497EF39005AE16D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		7AADDACB24C9FF3400C1E181 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F2E42742497EF39005AE16D /* MavenBlog */;
+			targetProxy = 7AADDACA24C9FF3400C1E181 /* PBXContainerItemProxy */;
 		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
 		2F2E42832497EF3C005AE16D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -340,6 +574,48 @@
 			};
 			name = Release;
 		};
+		7AADDACD24C9FF3400C1E181 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 652R6A63L8;
+				INFOPLIST_FILE = MavenBlogTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.MavenBlogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MavenBlog.app/MavenBlog";
+			};
+			name = Debug;
+		};
+		7AADDACE24C9FF3400C1E181 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 652R6A63L8;
+				INFOPLIST_FILE = MavenBlogTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.MavenBlogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MavenBlog.app/MavenBlog";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -357,6 +633,15 @@
 			buildConfigurations = (
 				2F2E428A2497EF3C005AE16D /* Debug */,
 				2F2E428B2497EF3C005AE16D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7AADDACC24C9FF3400C1E181 /* Build configuration list for PBXNativeTarget "MavenBlogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AADDACD24C9FF3400C1E181 /* Debug */,
+				7AADDACE24C9FF3400C1E181 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
