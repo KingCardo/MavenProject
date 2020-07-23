@@ -38,9 +38,6 @@ class BlogPostListViewController: UIViewController, LogInViewControllerDelegate 
     // MARK: - Methods
     
     func logInViewControllerDidLogIn() {
-        guard let username = UserManager.shared.userName else { return }
-        navigationItem.title = "Welcome, \(String(describing: username))!"
-        
         blogPostViewModel.login() { [weak self] error in
             DispatchQueue.main.async {
                 if let error = error {
@@ -53,6 +50,9 @@ class BlogPostListViewController: UIViewController, LogInViewControllerDelegate 
                 self?.tableView.reloadData()
             }
         }
+        
+        guard let username = UserManager.shared.userName else { return }
+        navigationItem.title = "Welcome, \(String(describing: username))!"
     }
     
     private func setupTableView() {
@@ -77,7 +77,9 @@ class BlogPostListViewController: UIViewController, LogInViewControllerDelegate 
     }
     
     @objc private func favoritedPostsDidChange() {
-        tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     

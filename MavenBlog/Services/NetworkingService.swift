@@ -9,5 +9,7 @@
 import Foundation
 
 protocol NetworkingService {
-    //func fetchData(completion: @escaping(Post?, Error?) -> Void)
+    func get(url: URL, completion: @escaping(Data?, Error?) -> Void)
+    func decodePosts(data: Data) throws -> [Post]?
+    func decodePost(data: Data) throws -> Post?
 }

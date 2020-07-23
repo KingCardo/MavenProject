@@ -62,7 +62,7 @@ class UserManager {
     
     private func validateCredentials(username: String, password: String) -> Bool {
         if username == "user" && password == "pass" {
-            UserDefaults.standard.set("Maven", forKey: UserDefaults.userNameKey)
+            UserDefaults.standard.set(currentUser?.username, forKey: UserDefaults.userNameKey)
             return true
         }
         return false

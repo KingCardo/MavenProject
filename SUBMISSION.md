@@ -15,7 +15,7 @@
 //Then focused on refactoring each scene to use MVVM
 
 //I started with this route because I think having a good architecture and clean code base is top priority and will improve velocity for future stories while minimizing complexities.
-//In Swift 5 Json parsing is super easy with Codable protocol and will natively do so to avoid adding extra dependencies to project
+//In Swift 5 JSON parsing is super easy with Codable protocol and will natively do so to avoid adding extra dependencies to project instead of SwiftJson
 
 ### Additional thoughts
 

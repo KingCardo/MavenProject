@@ -10,7 +10,7 @@ import Foundation
 
 class BlogListDetailViewModel {
     
-    var post: Post!
+    var post: Post?
     
     let service: NetworkingService
     
@@ -22,37 +22,41 @@ class BlogListDetailViewModel {
     // MARK: - Intents
     
     func start(completion: @escaping(Error?) -> Void) {
-//        service.fetchData() { [weak self] post, error in
-//            if error != nil {
-//             completion(error)
-//                return
-//            }
-//        }
-        URLSession.shared.dataTask(with: URL(string: "https://jsonplaceholder.typicode.com/posts/\(post.id)")!, completionHandler: { [weak self] data, response, error in
-                   if error != nil {
-                    completion(error)
-                       return
-                   }
-                   
-                   do {
-                       let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
-                       self?.post = Post(json: json ?? [:])
-                       
-                           completion(nil)
-                   } catch {
-                        completion(error)
-                   }
-               }).resume()
         
+        guard let id = post?.id else  {
+            return
+        }
+        
+        service.get(url: Networking.url.appendingPathComponent("\(id)")) { [weak self] (data, error) in
+            if error != nil {
+                completion(error)
+                return
+            }
+            
+            if let data = data {
+                do {
+                    guard let post = try self?.service.decodePost(data: data) else {
+                        completion(error)
+                        return
+                    }
+                    self?.post = post
+                    completion(nil)
+                } catch let error {
+                    completion(error)
+                }
+            }
+        }
     }
     
     func addToFavorites() {
+        guard let post = post else { return }
         UserManager.shared.userDidFavoritePost(post)
         
     }
     
     func removeFromFavorites() {
-         UserManager.shared.userDidUnfavoritePost(post)
+        guard let post = post else { return }
+        UserManager.shared.userDidUnfavoritePost(post)
     }
     
     func isPostFavorited(_ post: Post) -> Bool {

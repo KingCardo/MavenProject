@@ -42,7 +42,9 @@ class BlogPostDetailViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
-        isFavorited = isPostFavorited(blogDetailViewModel.post)
+        if let post = blogDetailViewModel.post {
+        isFavorited = isPostFavorited(post)
+        }
         updateUI()
         start()
        
@@ -74,17 +76,14 @@ class BlogPostDetailViewController: UIViewController {
         
     }
     
-    private func updateViews() {
-        
-    }
-    
     private func isPostFavorited(_ post: Post) -> Bool {
         return blogDetailViewModel.isPostFavorited(post)
     }
     
     private func updateUI() {
-        self.titleLabel.text = blogDetailViewModel.post.title
-        self.bodyLabel.text = blogDetailViewModel.post.body
+        guard let post = blogDetailViewModel.post else { return }
+        self.titleLabel.text = post.title
+        self.bodyLabel.text = post.body
         
         if showsFaveButton {
             navigationItem.rightBarButtonItem = UIBarButtonItem(
@@ -112,7 +111,8 @@ class BlogPostDetailViewController: UIViewController {
     }
     
     private func setupViews() {
-        title = "Post \(blogDetailViewModel.post.id)"
+        guard let post = blogDetailViewModel.post else { return }
+        title = "Post \(post.id)"
         setupContainerStack()
         view.backgroundColor = .white
         

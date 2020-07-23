@@ -42,8 +42,9 @@ class FavoritesViewController: UIViewController {
     
     @objc func favoritedPostsDidChange() {
         DispatchQueue.main.async { [weak self] in
-            self?.navigationItem.title = "Faves (\(String(describing: self?.favoriteCount)))"
-            self?.tableView.reloadData()
+            guard let self = self else { return }
+            self.navigationItem.title = "Faves \(self.favoriteCount)"
+            self.tableView.reloadData()
         }
     }
     

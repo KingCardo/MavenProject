@@ -21,26 +21,21 @@ class BlogPostViewModel {
     // MARK: - Intents
     
     func login(completion: @escaping(Error?) -> Void) {
-        //service.fetchData(completion: <#T##(Post?, Error?) -> Void#>)
-        URLSession.shared.dataTask(with: URL(string: "https://jsonplaceholder.typicode.com/posts")!, completionHandler: { [weak self] data, response, error in
+        service.get(url: Networking.url) { [weak self] (data, error) in
             if error != nil {
                 completion(error)
                 return
             }
-            
-            do {
-                let jsonArray = try JSONSerialization.jsonObject(with: data!, options: []) as? [[String : Any]]
-                let posts = (jsonArray ?? []).compactMap({ json -> Post? in
-                  return Post(json: json)
-                })
-                self?.posts = posts
-                completion(nil)
-                
-            } catch {
-                completion(error)
+            if let data = data {
+                do {
+                    guard let posts = try self?.service.decodePosts(data: data) else { completion(DecodingError.failed) ; return }
+                    self?.posts = posts
+                    completion(nil)
+                } catch let error {
+                    completion(error)
+                }
             }
-        }).resume()
-        
+        }
     }
     
     func logOut() {
@@ -48,7 +43,11 @@ class BlogPostViewModel {
         UserManager.shared.resetFavoritePost()
     }
     
-     func isPostFavorited(_ post: Post) -> Bool {
+    func isPostFavorited(_ post: Post) -> Bool {
         return UserManager.shared.favoritePosts.map { $0.id }.contains(post.id)
+    }
+    
+    enum DecodingError: Error {
+        case failed
     }
 }
