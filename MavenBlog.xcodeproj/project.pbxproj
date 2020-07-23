@@ -30,8 +30,23 @@
 		7AADDABC24C8C0E000C1E181 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDABB24C8C0E000C1E181 /* Networking.swift */; };
 		7AADDABE24C8F01E00C1E181 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDABD24C8F01E00C1E181 /* UserDefaults.swift */; };
 		7AADDAC024C8F84E00C1E181 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDABF24C8F84E00C1E181 /* NetworkingService.swift */; };
+		7AADDAD024C9FF5200C1E181 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDACF24C9FF5200C1E181 /* LoginViewModelTests.swift */; };
+		7AADDAD224C9FFFA00C1E181 /* BlogListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAD124C9FFFA00C1E181 /* BlogListViewModelTests.swift */; };
+		7AADDAD424CA000D00C1E181 /* BlogDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAD324CA000D00C1E181 /* BlogDetailViewModelTests.swift */; };
+		7AADDAD624CA001B00C1E181 /* FavoritesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAD524CA001B00C1E181 /* FavoritesViewModelTests.swift */; };
+		7AADDAD824CA04E300C1E181 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAD724CA04E300C1E181 /* PostManager.swift */; };
 		DCB20D6E249A8EAC002E197B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7AADDACA24C9FF3400C1E181 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F2E426D2497EF39005AE16D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F2E42742497EF39005AE16D;
+			remoteInfo = MavenBlog;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2F2E42752497EF39005AE16D /* MavenBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MavenBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,11 +74,25 @@
 		7AADDABB24C8C0E000C1E181 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		7AADDABD24C8F01E00C1E181 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		7AADDABF24C8F84E00C1E181 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		7AADDAC524C9FF3400C1E181 /* MavenBlogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MavenBlogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AADDAC924C9FF3400C1E181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AADDACF24C9FF5200C1E181 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		7AADDAD124C9FFFA00C1E181 /* BlogListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListViewModelTests.swift; sourceTree = "<group>"; };
+		7AADDAD324CA000D00C1E181 /* BlogDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDetailViewModelTests.swift; sourceTree = "<group>"; };
+		7AADDAD524CA001B00C1E181 /* FavoritesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelTests.swift; sourceTree = "<group>"; };
+		7AADDAD724CA04E300C1E181 /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2F2E42722497EF39005AE16D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AADDAC224C9FF3400C1E181 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -77,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				2F2E42772497EF39005AE16D /* MavenBlog */,
+				7AADDAC624C9FF3400C1E181 /* MavenBlogTests */,
 				2F2E42762497EF39005AE16D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				2F2E42752497EF39005AE16D /* MavenBlog.app */,
+				7AADDAC524C9FF3400C1E181 /* MavenBlogTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				2F2E42942497FF26005AE16D /* UserManager.swift */,
+				7AADDAD724CA04E300C1E181 /* PostManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -217,6 +249,18 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		7AADDAC624C9FF3400C1E181 /* MavenBlogTests */ = {
+			isa = PBXGroup;
+			children = (
+				7AADDACF24C9FF5200C1E181 /* LoginViewModelTests.swift */,
+				7AADDAD124C9FFFA00C1E181 /* BlogListViewModelTests.swift */,
+				7AADDAD324CA000D00C1E181 /* BlogDetailViewModelTests.swift */,
+				7AADDAD524CA001B00C1E181 /* FavoritesViewModelTests.swift */,
+				7AADDAC924C9FF3400C1E181 /* Info.plist */,
+			);
+			path = MavenBlogTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,18 +281,40 @@
 			productReference = 2F2E42752497EF39005AE16D /* MavenBlog.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7AADDAC424C9FF3400C1E181 /* MavenBlogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AADDACC24C9FF3400C1E181 /* Build configuration list for PBXNativeTarget "MavenBlogTests" */;
+			buildPhases = (
+				7AADDAC124C9FF3400C1E181 /* Sources */,
+				7AADDAC224C9FF3400C1E181 /* Frameworks */,
+				7AADDAC324C9FF3400C1E181 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7AADDACB24C9FF3400C1E181 /* PBXTargetDependency */,
+			);
+			name = MavenBlogTests;
+			productName = MavenBlogTests;
+			productReference = 7AADDAC524C9FF3400C1E181 /* MavenBlogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2F2E426D2497EF39005AE16D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
+				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Maven Clinic";
 				TargetAttributes = {
 					2F2E42742497EF39005AE16D = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					7AADDAC424C9FF3400C1E181 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 2F2E42742497EF39005AE16D;
 					};
 				};
 			};
@@ -266,6 +332,7 @@
 			projectRoot = "";
 			targets = (
 				2F2E42742497EF39005AE16D /* MavenBlog */,
+				7AADDAC424C9FF3400C1E181 /* MavenBlogTests */,
 			);
 		};
 /* End PBXProject section */
@@ -277,6 +344,13 @@
 			files = (
 				2F2E42852497EF3C005AE16D /* LaunchScreen.storyboard in Resources */,
 				2F2E42822497EF3C005AE16D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AADDAC324C9FF3400C1E181 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +369,7 @@
 				7AADDABE24C8F01E00C1E181 /* UserDefaults.swift in Sources */,
 				7AADDAB724C8B9EE00C1E181 /* BlogListDetailViewModel.swift in Sources */,
 				7AADDAAA24C8A05600C1E181 /* Fonts.swift in Sources */,
+				7AADDAD824CA04E300C1E181 /* PostManager.swift in Sources */,
 				2F2E42932497FF01005AE16D /* User.swift in Sources */,
 				7AADDAB324C8AF1600C1E181 /* MainViewController.swift in Sources */,
 				7AADDAAD24C8A35700C1E181 /* MavenStrings.swift in Sources */,
@@ -312,7 +387,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7AADDAC124C9FF3400C1E181 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AADDAD224C9FFFA00C1E181 /* BlogListViewModelTests.swift in Sources */,
+				7AADDAD024C9FF5200C1E181 /* LoginViewModelTests.swift in Sources */,
+				7AADDAD624CA001B00C1E181 /* FavoritesViewModelTests.swift in Sources */,
+				7AADDAD424CA000D00C1E181 /* BlogDetailViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7AADDACB24C9FF3400C1E181 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F2E42742497EF39005AE16D /* MavenBlog */;
+			targetProxy = 7AADDACA24C9FF3400C1E181 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2F2E42832497EF3C005AE16D /* LaunchScreen.storyboard */ = {
@@ -476,6 +570,48 @@
 			};
 			name = Release;
 		};
+		7AADDACD24C9FF3400C1E181 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 652R6A63L8;
+				INFOPLIST_FILE = MavenBlogTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.MavenBlogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MavenBlog.app/MavenBlog";
+			};
+			name = Debug;
+		};
+		7AADDACE24C9FF3400C1E181 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 652R6A63L8;
+				INFOPLIST_FILE = MavenBlogTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.MavenBlogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MavenBlog.app/MavenBlog";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -493,6 +629,15 @@
 			buildConfigurations = (
 				2F2E428A2497EF3C005AE16D /* Debug */,
 				2F2E428B2497EF3C005AE16D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7AADDACC24C9FF3400C1E181 /* Build configuration list for PBXNativeTarget "MavenBlogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AADDACD24C9FF3400C1E181 /* Debug */,
+				7AADDACE24C9FF3400C1E181 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -10,9 +10,9 @@ import Foundation
 
 class Networking: NetworkingService {
     
-    static let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
+    // IF real app would add caching of network calls to save users data and be more efficient
     
-    private let serialQueue = DispatchQueue.init(label: "Serial")
+    static let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
     
     func decodePosts(data: Data) throws -> [Post]? {
         do {

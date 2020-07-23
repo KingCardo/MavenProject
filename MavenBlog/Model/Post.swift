@@ -19,6 +19,12 @@ struct Post: Codable {
         self.body = json[Post.kBody] as? String
     }
     
+    init() {
+        self.id = 1
+        self.title = "Test"
+        self.body = "Body"
+    }
+    
 }
 
 extension Post {

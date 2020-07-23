@@ -10,7 +10,12 @@ import Foundation
 
 class BlogPostViewModel {
     
-    var posts: [Post] = []
+    var posts: [Post] = [] {
+        didSet {
+            PostManager.shared.posts = posts
+            PostManager.shared.save()
+        }
+    }
     
     let service: NetworkingService
     
@@ -21,6 +26,15 @@ class BlogPostViewModel {
     // MARK: - Intents
     
     func login(completion: @escaping(Error?) -> Void) {
+        
+        // Added local persistence to prevent going over network every time for the same posts
+        if let posts = PostManager.shared.load() {
+            self.posts = posts
+            completion(nil)
+            return
+            
+        }
+        
         service.get(url: Networking.url) { [weak self] (data, error) in
             if error != nil {
                 completion(error)
