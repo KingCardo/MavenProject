@@ -19,34 +19,16 @@ class LogInViewController: UIViewController {
     
     // MARK: - Views
     
-    private let mavenTitleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Maven Blog"
-        label.textAlignment = .center
-        label.font = UIFont.makeTitleFont(size: LogInViewController.titleLabelFontSize)//TODO: - refactor
-        return label
-    }()
+    private let mavenTitleLabel = UILabel.createLabel(text: "Maven Blog", font: UIFont.makeTitleFont(size: LogInViewController.titleLabelFontSize))
     
-    private let usernameTextField: UITextField = {
-        let tf = UITextField()
-        tf.minimumFontSize = LogInViewController.minFontSize
-        tf.adjustsFontSizeToFitWidth = true
-        tf.font = UIFont.systemFont(ofSize: LogInViewController.textFieldFontSize)
-        tf.placeholder = "Username"
-        tf.borderStyle = .roundedRect
-        return tf
-    }()
+    private let usernameTextField = UITextField.createTextField(minimumFontSize: LogInViewController.minFontSize,
+                                                                font: UIFont.systemFont(ofSize: LogInViewController.textFieldFontSize),
+                                                                placeHolder: "Username")
     
-    private let passwordTextField: UITextField = {
-        let tf = UITextField()
-        tf.minimumFontSize = LogInViewController.minFontSize
-        tf.adjustsFontSizeToFitWidth = true
-        tf.font = UIFont.systemFont(ofSize: LogInViewController.textFieldFontSize)
-        tf.placeholder = "Password"
-        tf.borderStyle = .roundedRect
-        tf.isSecureTextEntry = true
-        return tf
-    }()
+    private let passwordTextField = UITextField.createTextField(minimumFontSize: LogInViewController.minFontSize,
+                                                                font: UIFont.systemFont(ofSize: LogInViewController.textFieldFontSize),
+                                                                placeHolder: "Password", isSecureTextEntry: true)
+    
     
     private var submitButton: UIButton = {
         let button = UIButton()
