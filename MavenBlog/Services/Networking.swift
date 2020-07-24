@@ -12,23 +12,23 @@ class Networking: NetworkingService {
     
     static let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
     
-    func decodePosts(data: Data) throws -> [Post]? {
-        do {
-            let result = try JSONDecoder().decode([Post].self, from: data)
-            return result
-        } catch {
-            throw DecodingError.failed
-        }
-    }
-    
-    func decodePost(data: Data) throws -> Post? {
-        do {
-            let result = try JSONDecoder().decode(Post.self, from: data)
-            return result
-        } catch {
-            throw DecodingError.failed
-        }
-    }
+//    func decodePosts(data: Data) throws -> [Post]? {
+//        do {
+//            let result = try JSONDecoder().decode([Post].self, from: data)
+//            return result
+//        } catch {
+//            throw DecodingError.failed
+//        }
+//    }
+//
+//    func decodePost(data: Data) throws -> Post? {
+//        do {
+//            let result = try JSONDecoder().decode(Post.self, from: data)
+//            return result
+//        } catch {
+//            throw DecodingError.failed
+//        }
+//    }
     
     func get(url: URL, completion: @escaping (Data?, Error?) -> Void) {
         

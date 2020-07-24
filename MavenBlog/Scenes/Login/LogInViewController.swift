@@ -63,8 +63,9 @@ class LogInViewController: UIViewController {
     
     private func setupSpinner() {
         view.addSubview(spinner)
-        spinner.anchor(top: submitButton.bottomAnchor, padding: UIEdgeInsets(top: LogInViewController.spinnerSpacingTop, left: 0, bottom: 0, right: 0))
-        spinner.centerInSuperview()
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.topAnchor.constraint(equalTo: submitButton.bottomAnchor, constant: LogInViewController.spinnerSpacingTop).isActive = true
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         spinner.startAnimating()
     }
     
@@ -152,5 +153,5 @@ extension LogInViewController {
     static let titleLabelFontSize: CGFloat = 37
     static let textFieldFontSize: CGFloat = 14
     static let submitButtonFontSize: CGFloat = 15
-    static let spinnerSpacingTop: CGFloat = 12
+    static let spinnerSpacingTop: CGFloat = 25
 }
