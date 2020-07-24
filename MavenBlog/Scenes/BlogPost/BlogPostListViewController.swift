@@ -9,7 +9,7 @@ import UIKit
 
 class BlogPostListViewController: UIViewController, LogInViewControllerDelegate {
     
-    private var blogPostViewModel = BlogPostViewModel(service: Networking())
+    private var blogPostViewModel = BlogPostViewModel(service: /* AlamoFire()*/Networking())
     
     private static let bpTableViewCellID = "BlogTableViewCellID"
     

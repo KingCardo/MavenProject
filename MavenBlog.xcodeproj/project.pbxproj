@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		2F2E42932497FF01005AE16D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E42922497FF01005AE16D /* User.swift */; };
 		2F2E42952497FF26005AE16D /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E42942497FF26005AE16D /* UserManager.swift */; };
 		2F2E4297249800FE005AE16D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E4296249800FE005AE16D /* LogInViewController.swift */; };
+		53DFFDE8D50C6C354DE21FE5 /* Pods_MavenBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC11D4000330A6CBF6A4465 /* Pods_MavenBlog.framework */; };
 		7AADDAA224C8977D00C1E181 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAA124C8977D00C1E181 /* LoginViewModel.swift */; };
 		7AADDAA824C89F6A00C1E181 /* UIColor+ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAA724C89F6A00C1E181 /* UIColor+ThemeColors.swift */; };
 		7AADDAAA24C8A05600C1E181 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAA924C8A05600C1E181 /* Fonts.swift */; };
@@ -36,7 +37,9 @@
 		7AADDAD824CA04E300C1E181 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAD724CA04E300C1E181 /* PostManager.swift */; };
 		7AADDADA24CA0AED00C1E181 /* UserManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAD924CA0AED00C1E181 /* UserManagerTests.swift */; };
 		7AADDADC24CA3E3500C1E181 /* UIKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDADB24CA3E3500C1E181 /* UIKit+Extension.swift */; };
+		7AADDADE24CB488000C1E181 /* AlamoFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDADD24CB488000C1E181 /* AlamoFire.swift */; };
 		DCB20D6E249A8EAC002E197B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */; };
+		E25A4D024762320844CEAAB5 /* Pods_MavenBlogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 085BEE8210A056FD5739C80A /* Pods_MavenBlogTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0502C6EC0CB816E705623209 /* Pods-MavenBlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MavenBlog.debug.xcconfig"; path = "Target Support Files/Pods-MavenBlog/Pods-MavenBlog.debug.xcconfig"; sourceTree = "<group>"; };
+		085BEE8210A056FD5739C80A /* Pods_MavenBlogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MavenBlogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F2E42752497EF39005AE16D /* MavenBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MavenBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F2E42782497EF39005AE16D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F2E427A2497EF39005AE16D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +67,7 @@
 		2F2E42922497FF01005AE16D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2F2E42942497FF26005AE16D /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		2F2E4296249800FE005AE16D /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		491338187CCD423D693530D9 /* Pods-MavenBlogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MavenBlogTests.release.xcconfig"; path = "Target Support Files/Pods-MavenBlogTests/Pods-MavenBlogTests.release.xcconfig"; sourceTree = "<group>"; };
 		7AADDAA124C8977D00C1E181 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7AADDAA724C89F6A00C1E181 /* UIColor+ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ThemeColors.swift"; sourceTree = "<group>"; };
 		7AADDAA924C8A05600C1E181 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -83,6 +89,10 @@
 		7AADDAD724CA04E300C1E181 /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		7AADDAD924CA0AED00C1E181 /* UserManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerTests.swift; sourceTree = "<group>"; };
 		7AADDADB24CA3E3500C1E181 /* UIKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extension.swift"; sourceTree = "<group>"; };
+		7AADDADD24CB488000C1E181 /* AlamoFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFire.swift; sourceTree = "<group>"; };
+		7BC11D4000330A6CBF6A4465 /* Pods_MavenBlog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MavenBlog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89FDE5BBF2831F9E0E0C9BD5 /* Pods-MavenBlog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MavenBlog.release.xcconfig"; path = "Target Support Files/Pods-MavenBlog/Pods-MavenBlog.release.xcconfig"; sourceTree = "<group>"; };
+		98529F4F2BF38891EF7C6458 /* Pods-MavenBlogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MavenBlogTests.debug.xcconfig"; path = "Target Support Files/Pods-MavenBlogTests/Pods-MavenBlogTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DCB20D6D249A8EAC002E197B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53DFFDE8D50C6C354DE21FE5 /* Pods_MavenBlog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,18 +109,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E25A4D024762320844CEAAB5 /* Pods_MavenBlogTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18B183FC228911631B9CB480 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0502C6EC0CB816E705623209 /* Pods-MavenBlog.debug.xcconfig */,
+				89FDE5BBF2831F9E0E0C9BD5 /* Pods-MavenBlog.release.xcconfig */,
+				98529F4F2BF38891EF7C6458 /* Pods-MavenBlogTests.debug.xcconfig */,
+				491338187CCD423D693530D9 /* Pods-MavenBlogTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2F2E426C2497EF39005AE16D = {
 			isa = PBXGroup;
 			children = (
 				2F2E42772497EF39005AE16D /* MavenBlog */,
 				7AADDAC624C9FF3400C1E181 /* MavenBlogTests */,
 				2F2E42762497EF39005AE16D /* Products */,
+				18B183FC228911631B9CB480 /* Pods */,
+				75FBD4890E0CDFA6C89F2F10 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +161,15 @@
 				2F2E42862497EF3C005AE16D /* Info.plist */,
 			);
 			path = MavenBlog;
+			sourceTree = "<group>";
+		};
+		75FBD4890E0CDFA6C89F2F10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BC11D4000330A6CBF6A4465 /* Pods_MavenBlog.framework */,
+				085BEE8210A056FD5739C80A /* Pods_MavenBlogTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7AADDA9924C8950600C1E181 /* Main */ = {
@@ -248,6 +282,7 @@
 			children = (
 				7AADDABB24C8C0E000C1E181 /* Networking.swift */,
 				7AADDABF24C8F84E00C1E181 /* NetworkingService.swift */,
+				7AADDADD24CB488000C1E181 /* AlamoFire.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -271,9 +306,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F2E42892497EF3C005AE16D /* Build configuration list for PBXNativeTarget "MavenBlog" */;
 			buildPhases = (
+				0DF5AE2FBEF5124E07672E50 /* [CP] Check Pods Manifest.lock */,
 				2F2E42712497EF39005AE16D /* Sources */,
 				2F2E42722497EF39005AE16D /* Frameworks */,
 				2F2E42732497EF39005AE16D /* Resources */,
+				3BAD35A0509F0001D9E8929D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,6 +325,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7AADDACC24C9FF3400C1E181 /* Build configuration list for PBXNativeTarget "MavenBlogTests" */;
 			buildPhases = (
+				6E3D2DECEE7FBF6DDF50A5D2 /* [CP] Check Pods Manifest.lock */,
 				7AADDAC124C9FF3400C1E181 /* Sources */,
 				7AADDAC224C9FF3400C1E181 /* Frameworks */,
 				7AADDAC324C9FF3400C1E181 /* Resources */,
@@ -359,6 +397,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0DF5AE2FBEF5124E07672E50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MavenBlog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BAD35A0509F0001D9E8929D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MavenBlog/Pods-MavenBlog-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MavenBlog/Pods-MavenBlog-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MavenBlog/Pods-MavenBlog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E3D2DECEE7FBF6DDF50A5D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MavenBlogTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2F2E42712497EF39005AE16D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -388,6 +490,7 @@
 				2F2E42952497FF26005AE16D /* UserManager.swift in Sources */,
 				7AADDADC24CA3E3500C1E181 /* UIKit+Extension.swift in Sources */,
 				7AADDAB924C8BA1B00C1E181 /* FavoritesViewModel.swift in Sources */,
+				7AADDADE24CB488000C1E181 /* AlamoFire.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +643,7 @@
 		};
 		2F2E428A2497EF3C005AE16D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0502C6EC0CB816E705623209 /* Pods-MavenBlog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -558,6 +662,7 @@
 		};
 		2F2E428B2497EF3C005AE16D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89FDE5BBF2831F9E0E0C9BD5 /* Pods-MavenBlog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -576,6 +681,7 @@
 		};
 		7AADDACD24C9FF3400C1E181 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98529F4F2BF38891EF7C6458 /* Pods-MavenBlogTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -597,6 +703,7 @@
 		};
 		7AADDACE24C9FF3400C1E181 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 491338187CCD423D693530D9 /* Pods-MavenBlogTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
