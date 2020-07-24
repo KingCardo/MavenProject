@@ -11,26 +11,14 @@ import Alamofire
 class AlamoFire: NetworkingService {
     
     func get(url: URL, completion: @escaping (Data?, Error?) -> Void) {
-        let dataRequest = AF.request(url).data
-        
-        if let data = dataRequest {
-            completion(data, nil)
-        } else {
-            completion(nil, NetworkingError.DecodingError.failed)
+        let _ = AF.request(url).responseData { (response) in
+            if let data = response.data {
+                completion(data, nil)
+                return
+            } else {
+                completion(nil, NetworkingError.DecodingError.failed)
+                return
+            }
         }
     }
-    
-//    func decodePosts(data: Data) throws -> [Post]? {
-//        <#code#>
-//    }
-//
-//    func decodePost(data: Data) throws -> Post? {
-//        <#code#>
-//    }
-    
-//    enum NetworkingError: Error {
-//        case failed
-//    }
-    
-    
 }

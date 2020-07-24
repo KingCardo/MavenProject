@@ -11,7 +11,7 @@ class BlogPostDetailViewController: UIViewController {
     
     var showsFaveButton: Bool = true
     var isFavorited: Bool = false
-    var blogDetailViewModel = BlogListDetailViewModel(service: /*AlamoFire()*/ Networking())
+    var blogDetailViewModel = BlogListDetailViewModel(service: AlamoFire() /*Networking()*/)
     
     // MARK: - Views
     
